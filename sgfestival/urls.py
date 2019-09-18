@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
+import madang.views as views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('schedule/', include("schedule.urls")),
-    path('madang/', include("madang.urls")),
+    path('madang/', include("madang.urls", namespace="madang")),
+    path('madang/<int:pk>/', views.madang_detail, name="madang_detail"),
 ]

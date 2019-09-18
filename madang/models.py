@@ -10,9 +10,10 @@ CATEGORY_CHOICES=(
         )
 
 class Madang(models.Model):
-    title = models.CharField(max_length=100)
-    detail = models.CharField(max_length=1500)
-    price = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, default='')
+    contents = models.CharField(max_length=100, default='')
+    detail = models.CharField(max_length=1500, default='')
+    price = models.CharField(max_length=100, default='')
     image1 = models.ImageField(upload_to='images/', blank=True)
     image2 = models.ImageField(upload_to='images/', blank=True)
     image3 = models.ImageField(upload_to='images/', blank=True)
@@ -26,3 +27,7 @@ class Madang(models.Model):
         choices = CATEGORY_CHOICES,
         default  = '',
         )
+
+class jooho(models.Model):
+        title = models.CharField(max_length=100)
+

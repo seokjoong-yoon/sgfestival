@@ -123,5 +123,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+<<<<<<< HEAD
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+=======
+#customuser
+AUTH_USER_MODEL = 'accounts.Myuser'
+>>>>>>> 26075a3cf6348f5c150b5ecd062aca199666cd89

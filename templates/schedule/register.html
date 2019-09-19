@@ -1,0 +1,32 @@
+<div class="register">
+    <form action="{% url 'register' %}" method="POST">{% csrf_token %}
+        <span>학번 <input name="username" placeholder='' type="text" required></span>    
+        <p><label for="id_dpt">학부:</label> <select name="dpt" id="id_dpt">
+                <option value="1">국제인문학부</option>
+              
+                <option value="2">사회과학부</option>
+              
+                <option value="3">지식융합미디어학부</option>
+              
+                <option value="4">자연과학부</option>
+              
+                <option value="5">공학부</option>
+              
+                <option value="6">경제학부</option>
+              
+                <option value="7">경영학부</option>
+              
+                <option value="8">커뮤니케이션학부</option>
+              
+              </select></p>
+        <span>비밀번호 <input name="password1" id="pw" placeholder='' type="password" required></span> 
+        <span>비밀번호 확인 <input name="password2" id="checkpw" placeholder='' type="password" required></span> 
+
+        {% if context %}
+            {{context}}
+        {% endif %}   
+        <br>
+        <button type="submit">가입하기</button>
+        <button type="button" onClick="location.href='{% url 'home' %}'">홈으로 가기</button>       
+    </form>
+</div>

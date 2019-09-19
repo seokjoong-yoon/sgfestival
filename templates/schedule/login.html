@@ -1,0 +1,10 @@
+<form method = "POST" action="{% url 'login' %}">{% csrf_token %}
+    <span>학번 <input name="username" placeholder='' type="text" required></span>            
+    <span>비밀번호 <input name="password" placeholder='' type="password" required></span> 
+
+    {% if context %}
+            {{context}}
+    {% endif %}  
+    <button type="submit">로그인</button>
+    <button type="button" onclick="location.href='{% url 'register' %}'">회원가입</botton>
+</form>

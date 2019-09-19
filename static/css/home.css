@@ -134,7 +134,23 @@ body {
 #signup{
     position: absolute;
     height: 30%;
-    z-index: 100;
+    z-index: 10;
     top : 70%;
     right: 20%;
+}
+
+#login-div{
+    position: absolute;
+    z-index: 10;
+    top :50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#register-div{
+    position: absolute;
+    z-index: 10;
+    top :50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

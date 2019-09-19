@@ -14,7 +14,7 @@ def register(request):
             username=request.POST['username']
             password=request.POST['password1']
             dpt=request.POST['dpt']
-            Myuser.objects.create_user(username=username, password=password)
+            Myuser.objects.create_user(username=username, password=password, dpt = dpt)
             newuser = auth.authenticate(username=username,password=password)
             auth.login(request, newuser)
             return redirect('home')

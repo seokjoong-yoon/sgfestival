@@ -10,7 +10,7 @@ class MyuserAdmin(UserAdmin):
     add_form = MyuserCreationForm
     fieldsets = UserAdmin.fieldsets + (
         ('Extra Fields', {
-            'fields': ('dpt','check','score')}),
+            'fields': ('dpt','check','songscore', 'insidescore', 'song_done', 'inside_done')}),
     )
 
 admin.site.register(Myuser, MyuserAdmin)

@@ -4,16 +4,8 @@
 
 <form method="POST" action="{% url 'game1' %}">
     {% csrf_token %}
-     <!-- <h1>1번</h1>
-    <h1>문제는 여기</h1>
-     답: <textarea name="1" id="1" rows="1" cols="20" style="ime-mode:auto; border:none; border-bottom:1px solid black;"></textarea>
-    <h1>2번</h1>
-    <h1>문제는 여기</h1>
-     답: <textarea name="2" id="2" rows="1" cols="20" style="ime-mode:auto; border:none; border-bottom:1px solid black;"></textarea><br><br>
-     -->
 
-
-     <script language = "JavaScript">
+    <script language = "JavaScript">
         for(i=1; i<=4; i++){
             document.write("<h1>"+ i +"번"+ '<br></h1>');
             document.write("<h1>문제는 여기" + '<br></h1>');

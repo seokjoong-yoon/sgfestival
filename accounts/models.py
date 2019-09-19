@@ -5,4 +5,7 @@ from django.contrib.auth.models import AbstractUser
 class Myuser(AbstractUser):
     check=models.CharField(max_length=255)  #출석체크
     dpt=models.CharField(default='', max_length=255)    #학부
-    score=models.FloatField(default=0)     #게임 점수
+    songscore=models.IntegerField(default=0)     #노래 게임 점수
+    insidescore=models.IntegerField(default=0)     #인싸 게임 점수
+    song_done=models.BooleanField(default=False)    #노래 게임 완료
+    inside_done=models.BooleanField(default=False)  #인싸 게임 완료

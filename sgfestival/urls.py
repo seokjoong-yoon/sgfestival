@@ -23,8 +23,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('schedule/', include("schedule.urls")),
     path('madang/', include("madang.urls", namespace="madang")),
-    path('madang/<int:pk>/', mviews.madang_detail, name="madang_detail"),
+    path('madang/<int:pk>/', views.madang_detail, name="madang_detail"),
     path('lineup', mviews.lineup, name="lineup"),
     path('performtime', mviews.performtime, name="performtime"),
+    path('foodtruck/', include("foodtruck.urls")),
 ]
 

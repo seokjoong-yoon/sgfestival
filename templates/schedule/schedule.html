@@ -31,6 +31,19 @@
 </head>
 
 <body>
+  
+  <!--backend added-->
+  <h1>SCHEDULE PAGE</h1>
+
+    {% if post_list %}
+        {% for post in post_list %}
+        
+        <a href="{% url 'schedule:schedule_detail' index=post.pk %}">{{ post.eventTitle }}</a>
+        {% endfor %}
+    {% endif %}
+  <!--backend added-->
+  
+  
     <div id="total">
         <div id="top">
             <a href="#"><img src="{% static "images/home_button.png" %}" style="padding-top: 5%; padding-left: 5%; width: 25%;"/></a>
@@ -52,4 +65,3 @@
         </div>
     </div>
 </body>
-

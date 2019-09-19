@@ -1,0 +1,59 @@
+<h1>FOODTRUCK DETAIL KOREAN</h1>
+
+
+<!--이중 for loop-->
+{% for cate in categorized %}
+    <br>
+    푸드트럭 이름: {{ cate.ftName }}
+    {{cate.generalRating}}
+    {% if cate.ftImage %} 
+        <img src = "{{ cate.ftImage.url }}" width = 300><br>  <!--푸드트럭 이미지-->
+    {% endif %}
+    <!--여기부터 if cate.ftMenu10 까지는 푸드트럭 메뉴-->
+    <p>메뉴:</p>
+    {% if cate.ftMenu1 %}
+        <p>{{ cate.ftMenu1 }}</p>
+    {% endif %}
+    {% if cate.ftMenu2 %}
+        <p>{{ cate.ftMenu2 }}</p>
+    {% endif %}
+    {% if cate.ftMenu3 %}
+        <p>{{ cate.ftMenu3 }}</p>
+    {% endif %}
+    {% if cate.ftMenu4 %}
+        <p>{{ cate.ftMenu4 }}</p>
+    {% endif %}
+    {% if cate.ftMenu5 %}
+        <p>{{ cate.ftMenu5 }}</p>
+    {% endif %}
+    {% if cate.ftMenu6 %}
+        <p>{{ cate.ftMenu6 }}</p>
+    {% endif %}
+    {% if cate.ftMenu7 %}
+        <p>{{ cate.ftMenu7 }}</p>
+    {% endif %}
+    {% if cate.ftMenu8 %}
+        <p>{{ cate.ftMenu8 }}</p>
+    {% endif %}
+    {% if cate.ftMenu9 %}
+        <p>{{ cate.ftMenu9 }}</p>
+    {% endif %}
+    {% if cate.ftMenu10 %}
+        <p>{{ cate.ftMenu10 }}</p>
+    {% endif %}
+
+    <a href="{% url 'foodtruck:foodtruck_review_korean' index=cate.pk %}">후기 남기기</a>
+    <br><br>
+    {% for comment in comments %}
+        {% if comment.foodtruck == cate %}
+        {{ comment.ftRating}} <br>   <!--점수-->
+        {{ comment.ftComment }} <br>  <!--댓글내용-->
+        {{ comment.ftCommentAuthor }} <br> <!--작성자-->
+        {{ comment.ftCommentTimeStamp }} <br> <!--작성시간-->
+        {% if comment.ftCommentImage %} 
+            <img src = "{{ comment.ftCommentImage.url }}" width = 300><br>  <!--사용자가 올린 음식 이미지-->
+        {% endif %}
+        <br><br>
+        {% endif %}
+    {% endfor %}
+{% endfor %}

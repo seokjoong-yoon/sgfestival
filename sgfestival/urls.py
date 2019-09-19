@@ -23,4 +23,5 @@ urlpatterns = [
     path('schedule/', include("schedule.urls")),
     path('madang/', include("madang.urls", namespace="madang")),
     path('madang/<int:pk>/', views.madang_detail, name="madang_detail"),
+    path('foodtruck/', include("foodtruck.urls")),
 ]

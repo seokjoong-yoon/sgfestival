@@ -1,5 +1,28 @@
 <h1>노래 맞추기 게임</h1>
 
-<form method="POST" class="post-form">
+<meta charset="utf-8">
 
+<form method="POST" action="{% url 'game1' %}">
+    {% csrf_token %}
+     <!-- <h1>1번</h1>
+    <h1>문제는 여기</h1>
+     답: <textarea name="1" id="1" rows="1" cols="20" style="ime-mode:auto; border:none; border-bottom:1px solid black;"></textarea>
+    <h1>2번</h1>
+    <h1>문제는 여기</h1>
+     답: <textarea name="2" id="2" rows="1" cols="20" style="ime-mode:auto; border:none; border-bottom:1px solid black;"></textarea><br><br>
+     -->
+
+
+     <script language = "JavaScript">
+        for(i=1; i<=4; i++){
+            document.write("<h1>"+ i +"번"+ '<br></h1>');
+            document.write("<h1>문제는 여기" + '<br></h1>');
+            document.write("답: "+'<textarea name="' + i + '" id="' + i + '" rows="1" cols="20" style="ime-mode:auto; border:none; border-bottom:1px solid black;"></textarea>');
+            document.write('<br>');
+        }
+    </script>
+    
+    <br>
+    <button type="submit">제출하기</button>
 </form>
+

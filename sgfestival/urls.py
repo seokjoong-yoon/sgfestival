@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from accounts import views as userviews
-
+from game import views as gameviews
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -26,6 +26,8 @@ urlpatterns = [
     path('register/', userviews.register, name="register"), 
     path('login/', userviews.login, name="login"), 
     path('logout/', userviews.logout, name="logout"), 
+    path('song/', gameviews.game1, name="game1"),
+    path('songresult/', gameviews.game1result, name="game1result"),
 ]
 
 urlpatterns+=static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

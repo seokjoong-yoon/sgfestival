@@ -1,4 +1,3 @@
-
 from django.urls import path
 from madang import views
 from django.conf import settings

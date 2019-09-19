@@ -1,3 +1,4 @@
+
 """sgfestival URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -15,12 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-import madang.views as views
+import madang.views as mviews
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('schedule/', include("schedule.urls")),
     path('madang/', include("madang.urls", namespace="madang")),
-    path('madang/<int:pk>/', views.madang_detail, name="madang_detail"),
+    path('madang/<int:pk>/', mviews.madang_detail, name="madang_detail"),
+    path('lineup', mviews.lineup, name="lineup"),
+    path('performtime', mviews.performtime, name="performtime"),
 ]
+

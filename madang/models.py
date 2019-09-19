@@ -1,3 +1,4 @@
+
 from django.db import models
 from django.utils import timezone
 from django.conf import settings
@@ -7,6 +8,7 @@ CATEGORY_CHOICES=(
         ('2', '2'),
         ('3','3'),
         ('4','4'),
+        ('5','5'),
         )
 
 class Madang(models.Model):
@@ -30,4 +32,3 @@ class Madang(models.Model):
 
 class jooho(models.Model):
         title = models.CharField(max_length=100)
-

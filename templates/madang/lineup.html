@@ -1,0 +1,28 @@
+<html>
+<body>
+<input type="button" value = "목" onclick="thurs()">
+<input type="button" value = "금"" onclick="fri()">
+
+<img src="" id = "thursday" style="display:block" alt="목">
+<img src="" id = "friday" style="display:none" alt="금">
+
+    </body>
+    <script>
+        function thurs(){
+            var x = document.getElementById('thursday')
+            x.style.display="block";
+            var  y =document.getElementById('friday')
+            y.style.display="none"
+        }
+        function fri(){
+            var x = document.getElementById('friday');
+            x.style.display="block";
+            var  y =document.getElementById('thursday')
+            y.style.display="none"
+        }
+    </script>
+</body>
+<script>
+    
+</script>
+</html>

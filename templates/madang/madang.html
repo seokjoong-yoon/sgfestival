@@ -1,3 +1,5 @@
+
+//사진받아야함
 {% for madang in madang %} 
 <hr>
     {{ forloop.counter }} <a href="{% url 'madang_detail' pk=madang.pk %}">{{madang.title}}</a>

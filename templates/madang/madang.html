@@ -1,7 +1,46 @@
 
 //사진받아야함
+<div class = "monday">
 {% for madang in madang %} 
-<hr>
-    {{ forloop.counter }} <a href="{% url 'madang_detail' pk=madang.pk %}">{{madang.title}}</a>
+{% if madang.category == '1' %}
+     <a href="{% url 'madang_detail' pk=madang.pk %}">{{madang.title}}</a>
+     <hr>
+     {%endif%}
 {% endfor %}
-<hr>
+</div>
+<div class = "tuesday">
+{% for madang in madang %} 
+{% if madang.category == '2' %}
+    <a href="{% url 'madang_detail' pk=madang.pk %}">{{madang.title}}</a>
+     <hr>
+     {%endif%}
+{% endfor %}
+</div>
+<div class = "wednesday">
+{% for madang in madang %} 
+{% if madang.category == '3' %}
+     <a href="{% url 'madang_detail' pk=madang.pk %}">{{madang.title}}</a>
+     <hr>
+     {%endif%}
+{% endfor %}
+</div>
+<div class = "thursday">
+{% for madang in madang %} 
+{% if madang.category == '4' %}
+     <a href="{% url 'madang_detail' pk=madang.pk %}">{{madang.title}}</a>
+     <hr>
+     {%endif%}
+{% endfor %}
+</div>
+<div class = "friday">
+{% for madang in madang %} 
+{% if madang.category == '5' %}
+     <a href="{% url 'madang_detail' pk=madang.pk %}">{{madang.title}}</a>
+     <hr>
+     {%endif%}
+{% endfor %}
+</div>
+
+<script>
+
+</script>

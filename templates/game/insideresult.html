@@ -1,3 +1,20 @@
-<div>{{rank}}/{{total}}등</div>
-
+<div id="rank"></div>
 <button type="button" onclick="location.href='{%url 'dptinsiderank' %}'">학부별 랭킹</button>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$.ajax({
+    type:"GET",
+    url: "insiderank/",
+    contentType: "json",
+    success: function(context){
+        alert("success");
+        $("#rank").text(context['rank']+"/"+context['total']);
+    },
+    error: function(response){
+        alert('fail');
+    }
+})
+</script>

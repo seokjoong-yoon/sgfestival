@@ -30,7 +30,9 @@ urlpatterns = [
     path('inside/', gameviews.inside, name="inside"),
     path('songresult/', gameviews.game1result, name="game1result"),
     path('dptsongrank/', gameviews.dptsongrank, name="dptsongrank"), 
-    path('dptinsiderank/', gameviews.dptinsiderank, name="dptinsiderank"),
+    path('dptinsiderank/', gameviews.dptinsiderank, name='dptinsiderank'),
+    path('song/songrank/', gameviews.songrank, name="songrank"),
+    path('inside/insiderank/', gameviews.insiderank, name="insiderank"),
 ]
 
 urlpatterns+=static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

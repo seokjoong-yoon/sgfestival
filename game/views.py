@@ -3,11 +3,13 @@ from .models import game1
 from django.contrib.auth.models import User
 from accounts.models import Myuser
 from collections import OrderedDict
+import json
+from django.http import HttpResponse, JsonResponse
 # Create your views here.
 def game1(request):
     if request.user.song_done == True:
         total=Myuser.objects.filter(song_done=True).count()
-        userscore=Myuser.objects.order_by('-songscore')
+        userscore=Myuser.objects.filter(song_done=True).order_by('-songscore')
         rankD = OrderedDict()
         for user in userscore:
             if user.songscore in rankD.keys():
@@ -39,24 +41,28 @@ def game1(request):
         myuser.songscore = count
         myuser.song_done = True
         myuser.save()
+        return render(request, 'game/songresult.html', {'count':count})
+    else:
+        return render(request, 'game/song.html')
 
+def songrank(request):
+    if request.method == "GET":
         total=Myuser.objects.filter(song_done=True).count()
-        userscore=Myuser.objects.order_by('-songscore')
-        rankD = OrderedDict()
+        userscore=Myuser.objects.filter(song_done=True).order_by('-songscore')
+        rankD = OrderedDict()        
         for user in userscore:
             if user.songscore in rankD.keys():
                 rankD[user.songscore].append(user)
             else:
                 rankD[user.songscore]=[user]
         rank=list(rankD.keys()).index(request.user.songscore)
-        return render(request, 'game/songresult.html', {'count':count,"rank":rank+1, "total":total})
-    else:
-        return render(request, 'game/song.html')
+        context={"rank":rank+1, "total":total}
+        return JsonResponse(context)
 
 def inside(request):
     if request.user.inside_done == True:
         total=Myuser.objects.filter(inside_done=True).count()
-        userscore=Myuser.objects.order_by('-insidescore')
+        userscore=Myuser.objects.filter(inside_done=True).order_by('-insidescore')
         rankD = OrderedDict()
         for user in userscore:
             if user.insidescore in rankD.keys():
@@ -64,6 +70,7 @@ def inside(request):
             else:
                 rankD[user.insidescore]=[user]
         rank=list(rankD.keys()).index(request.user.insidescore)
+
         return render(request, 'game/insideresult.html', {"rank":rank+1,"total":total})
     if request.method=="POST":
         count=0
@@ -89,18 +96,22 @@ def inside(request):
         myuser.inside_done = True
         myuser.save()
 
-        total=Myuser.objects.filter(inside_done=True).count()
-        userscore=Myuser.objects.order_by('-insidescore')
-        rankD = OrderedDict()
-        for user in userscore:
-            if user.insidescore in rankD.keys():
-                rankD[user.insidescore].append(user)
-            else:
-                rankD[user.insidescore]=[user]
-        rank=list(rankD.keys()).index(request.user.insidescore)
-        return render(request, 'game/insideresult.html', {'count':count,"rank":rank+1,"total":total})
+        return render(request, 'game/insideresult.html', {'count':count})
     else:
         return render(request, 'game/inside.html')
+        
+def insiderank(request):
+    total=Myuser.objects.filter(inside_done=True).count()
+    userscore=Myuser.objects.filter(inside_done=True).order_by('-insidescore')
+    rankD = OrderedDict()
+    for user in userscore:
+        if user.insidescore in rankD.keys():
+            rankD[user.insidescore].append(user)
+        else:
+            rankD[user.insidescore]=[user]
+    rank=list(rankD.keys()).index(request.user.insidescore)
+    context={"rank":rank+1, "total":total}
+    return JsonResponse(context)
 
 
 def game1result(request):

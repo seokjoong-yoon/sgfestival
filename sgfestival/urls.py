@@ -26,5 +26,6 @@ urlpatterns = [
     path('madang/<int:pk>/', mviews.madang_detail, name="madang_detail"),
     path('lineup', mviews.lineup, name="lineup"),
     path('performtime', mviews.performtime, name="performtime"),
+    path('foodtruck/', include("foodtruck.urls")),
 ]
 

@@ -2,5 +2,36 @@ input {
     border: 0;
     outline: 0;
     background: transparent;
-    border-bottom: 1px solid black;
-  }
+    border-bottom: 3px solid white;
+    font-family: UhBeepuding, serif;
+    font-size: 24px;
+    color: white;
+    width 
+}
+
+#id{
+    font-family: UhBeepuding, serif;
+    font-size: 24px;
+    color: white;
+    margin: 10px;
+}
+
+#pw{
+    font-family: UhBeepuding, serif;
+    font-size: 24px;
+    color: white;
+    margin: 10px;
+}
+
+button {
+    float : right;
+    border: 0;
+    outline: 0;
+    border-radius: 20%;
+    background: rgb(239, 239, 293);
+    font-family: UhBeepuding, serif;
+    font-size: 24px;
+    color: rgb(243, 191, 66);
+    margin : 10px;
+}
+

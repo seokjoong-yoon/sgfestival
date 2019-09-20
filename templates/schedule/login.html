@@ -17,10 +17,10 @@
 
             <div id="board">
                 <img id="board-img" src="{% static 'images/home/board.png' %}">
-                <div id="login-div" class="absolute">
+                <div class="board-contents absolute">
                     <form method = "POST" action="{% url 'login' %}">{% csrf_token %}
-                        <div id="id">학번 　<input id="username" name="username" placeholder='' type="text" required></div>       
-                        <div id="pw">비밀번호 <input id="password" name="password" placeholder='' type="password" required></div> 
+                        <div class="font-on-board">학번 　<input id="username" name="username" placeholder='' type="text" required></div>       
+                        <div class="font-on-board">비밀번호 <input id="password" name="password" placeholder='' type="password" required></div> 
 
                         {% if context %}
                                 {{context}}

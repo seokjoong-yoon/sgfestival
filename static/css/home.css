@@ -139,7 +139,7 @@ body {
     right: 20%;
 }
 
-#login-div{
+.board-contents{
     position: absolute;
     z-index: 10;
     top :50%;
@@ -153,4 +153,5 @@ body {
     top :50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width : 80;
 }

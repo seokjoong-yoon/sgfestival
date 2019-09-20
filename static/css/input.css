@@ -1,4 +1,4 @@
-input {
+input{
     border: 0;
     outline: 0;
     background: transparent;
@@ -6,17 +6,26 @@ input {
     font-family: UhBeepuding, serif;
     font-size: 24px;
     color: white;
-    width 
+    width :50%;
 }
 
-#id{
+select{
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 3px solid white;
     font-family: UhBeepuding, serif;
     font-size: 24px;
     color: white;
-    margin: 10px;
+    width :50%;
 }
 
-#pw{
+select option{
+    background: green;
+
+}
+
+.font-on-board{
     font-family: UhBeepuding, serif;
     font-size: 24px;
     color: white;

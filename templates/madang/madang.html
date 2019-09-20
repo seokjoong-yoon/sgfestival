@@ -50,5 +50,49 @@
             <img src="{% static "images/map.png" %}" style="width:100%; text-align: center;" />
         </div>
     </div>
+
+    
+    <div id = 'monday' style="display: block">
+        {% for madang in madang %} 
+            {% if madang.category == '1' %}
+                <a href="{% url 'madang_detail' pk=madang.pk %}"><img src="{% static "images/box.png" %}" style="width:100%" />{{madang.title}}</a>
+                <hr>
+            {%endif%}
+        {% endfor %}
+    </div>
+    <div id = 'tuesday' style="display: none">
+        {% for madang in madang %} 
+            {% if madang.category == '2' %}
+                <a href="{% url 'madang_detail' pk=madang.pk %}">{{madang.title}}</a>
+                <hr>
+            {%endif%}
+        {% endfor %}
+    </div>
+    <div id = 'wednesday' style="display: none">
+        {% for madang in madang %} 
+            {% if madang.category == '3' %}
+                <a href="{% url 'madang_detail' pk=madang.pk %}">{{madang.title}}</a>
+                <hr>
+            {%endif%}
+        {% endfor %}
+    </div>
+    <div id = 'thursday' style="display: none">
+        {% for madang in madang %} 
+            {% if madang.category == '4' %}
+                <a href="{% url 'madang_detail' pk=madang.pk %}">{{madang.title}}</a>
+                <hr>
+            {%endif%}
+        {% endfor %}
+    </div>
+    <div id = 'friday' style="display: none">
+        {% for madang in madang %} 
+            {% if madang.category == '5' %}
+                <a href="{% url 'madang_detail' pk=madang.pk %}">{{madang.title}}</a>
+                <hr>
+            {%endif%}
+        {% endfor %}
+    </div>
+    
+    
 </body>
 

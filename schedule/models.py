@@ -15,4 +15,7 @@ class Schedule(models.Model):
     eventImage = models.ImageField(upload_to='images/', blank=True)
     eventContent = models.CharField(max_length = 300)
     eventTitle = models.CharField(max_length = 200)
+    when = models.CharField(max_length=200, default='')
+    where = models.CharField(max_length=200, default='')
+    what = models.CharField(max_length=200, default='')
     

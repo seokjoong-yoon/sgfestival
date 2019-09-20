@@ -45,46 +45,48 @@
                 <a href="#"><img id=fri src="{% static "images/fri_white.png" %}" style="padding-left: 5%; padding-top: 5%;" onclick="fri()"/></a>
 
                 <!-- 탬플릿태그 하려면 for 문 안에서 {{sch.모델필드}} 형식으로 하면 됨 -->
-                <div id='mon' style="display: block">
+                <div id='monday' style="display: block">
                     {% for sch in post_list %}
                         {% if sch.eventDay == 'mon' %}
-                        <a href="{% url 'schedule:schedule_detail' index=sch.pk %}">{{ sch.eventTitle }}</a>
-                        <br>
+                        {{ sch.when }}{{ sch.where }}{{ sch.what }}
+                        <hr>
                         {% endif %}
                     {% endfor %}
                 </div>
-                <div id='tue' style="display: none">
+                <div id='tuesday' style="display: none">
                     {% for sch in post_list %}
                         {% if sch.eventDay == 'tue' %}
-                        <a href="{% url 'schedule:schedule_detail' index=sch.pk %}">{{ sch.eventTitle }}</a>
-                        <br>
+                        {{ sch.when }}{{ sch.where }}{{ sch.what }}
+                        <hr>
                         {% endif %}
                     {% endfor %}
                 </div>
-                <div id='wed' style="display: none">
+                <div id='wednesday' style="display: none">
                     {% for sch in post_list %}
-                        {% if sch.eventDay == 'tue' %}
-                        <a href="{% url 'schedule:schedule_detail' index=sch.pk %}">{{ sch.eventTitle }}</a>
-                        <br>
+                        {% if sch.eventDay == 'wed' %}
+                        {{ sch.when }}{{ sch.where }}{{ sch.what }}
+                        <hr>
                         {% endif %}
                     {% endfor %}
                 </div>
-                <div id='thu' style="display: none">
+                <div id='thursday' style="display: none">
                     {% for sch in post_list %}
-                        {% if sch.eventDay == 'tue' %}
-                        <a href="{% url 'schedule:schedule_detail' index=sch.pk %}">{{ sch.eventTitle }}</a>
-                        <br>
+                        {% if sch.eventDay == 'thu' %}
+                        {{ sch.when }}{{ sch.where }}{{ sch.what }}
+                        <hr>
                         {% endif %}
                     {% endfor %}
                 </div>
-                <div id='fri' style="display: none">
+                <div id='friday' style="display: none">
                     {% for sch in post_list %}
-                        {% if sch.eventDay == 'tue' %}
-                        <a href="{% url 'schedule:schedule_detail' index=sch.pk %}">{{ sch.eventTitle }}</a>
-                        <br>
+                        {% if sch.eventDay == 'fri' %}
+                        {{ sch.when }}{{ sch.where }}{{ sch.what }}
+                        <hr>
                         {% endif %}
                     {% endfor %}
                 </div>
+
+
             </div>
         </div>
         <div id="info" style="text-align:center">

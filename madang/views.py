@@ -16,3 +16,6 @@ def lineup(request):
     
 def performtime(request):
     return render(request, 'madang/performtime.html')
+
+def timetable(request):
+    return render(request, 'timetable/timetable.html')

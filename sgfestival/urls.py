@@ -27,5 +27,6 @@ urlpatterns = [
     path('lineup', mviews.lineup, name="lineup"),
     path('performtime', mviews.performtime, name="performtime"),
     path('foodtruck/', include("foodtruck.urls")),
+    path('timetable/',mviews.timetable,name="timetable"),
 ]
 

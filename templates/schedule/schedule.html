@@ -28,6 +28,18 @@
             background-size: cover;
             background-attachment: scroll
         }
+        @font-face { font-family: 'UhBeepuding'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeepuding.woff') format('woff'); font-weight: normal; font-style: normal; }
+        #line{
+            font-family: UhBeepuding;
+            font-size:20px;
+        }
+        #a{color: white;}
+        #a:link {text-decoration: none; color: white;}
+        #a:visited {text-decoration: none; color: white;}
+        #a:active {text-decoration: none; color: white;}
+        div{
+            padding:0;
+        }
     </style>
 </head>
 
@@ -65,7 +77,13 @@
                 <div id='tuesday' style="display: none">
                     {% for sch in post_list %}
                         {% if sch.eventDay == '2' %}
-                        <a href="{% url 'schedule_detail' pk=sch.pk %}">{{ sch.when }}{{ sch.where }}{{ sch.what }}</a>
+                        <a href="{% url 'schedule:schedule_detail' index=sch.pk %}"style="color:white;">
+                            <div id="grid-container">
+                                <div id="when_grid">{{ sch.when }}</div>
+                                <div id="where_grid">{{ sch.where }}</div>
+                                <div id="what_grid">{{ sch.what }}</div>
+                            </div>
+                        </a>
                         <img src="{% static "images/line.png" %}" style="width:100%; text-align: center;">
                         <hr>
                         {% endif %}
@@ -74,7 +92,13 @@
                 <div id='wednesday' style="display: none">
                     {% for sch in post_list %}
                         {% if sch.eventDay == '3' %}
-                        {{ sch.when }}{{ sch.where }}{{ sch.what }}
+                        <a href="{% url 'schedule:schedule_detail' index=sch.pk %}"style="color:white;">
+                            <div id="grid-container">
+                                <div id="when_grid">{{ sch.when }}</div>
+                                <div id="where_grid">{{ sch.where }}</div>
+                                <div id="what_grid">{{ sch.what }}</div>
+                            </div>
+                        </a>
                         <img src="{% static "images/line.png" %}" style="width:100%; text-align: center;">
                         <hr>
                         {% endif %}
@@ -83,7 +107,13 @@
                 <div id='thursday' style="display: none">
                     {% for sch in post_list %}
                         {% if sch.eventDay == '4' %}
-                        {{ sch.when }}{{ sch.where }}{{ sch.what }}
+                        <a href="{% url 'schedule:schedule_detail' index=sch.pk %}"style="color:white;">
+                            <div id="grid-container">
+                                <div id="when_grid">{{ sch.when }}</div>
+                                <div id="where_grid">{{ sch.where }}</div>
+                                <div id="what_grid">{{ sch.what }}</div>
+                            </div>
+                        </a>
                         <img src="{% static "images/line.png" %}" style="width:100%; text-align: center;">
                         <hr>
                         {% endif %}
@@ -92,7 +122,13 @@
                 <div id='friday' style="display: none">
                     {% for sch in post_list %}
                         {% if sch.eventDay == '5' %}
-                        {{ sch.when }}{{ sch.where }}{{ sch.what }}
+                        <a href="{% url 'schedule:schedule_detail' index=sch.pk %}"style="color:white;">
+                            <div id="grid-container">
+                                <div id="when_grid">{{ sch.when }}</div>
+                                <div id="where_grid">{{ sch.where }}</div>
+                                <div id="what_grid">{{ sch.what }}</div>
+                            </div>
+                        </a>
                         <img src="{% static "images/line.png" %}" style="width:100%; text-align: center;">
                         <hr>
                         {% endif %}

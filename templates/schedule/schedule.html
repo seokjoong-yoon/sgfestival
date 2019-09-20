@@ -43,6 +43,47 @@
                 <a href="#"><img id=wed src="{% static "images/wed_white.png" %}" style="padding-left: 5%; padding-top: 5%;" onclick="wed()"/></a>
                 <a href="#"><img id=thur src="{% static "images/thur_white.png" %}" style="padding-left: 5%; padding-top: 5%;" onclick="thur()"/></a>
                 <a href="#"><img id=fri src="{% static "images/fri_white.png" %}" style="padding-left: 5%; padding-top: 5%;" onclick="fri()"/></a>
+
+                <div id='mon' style="display: block">
+                    {% for sch in post_list %}
+                        {% if sch.eventDay == 'mon' %}
+                        <a href="{% url 'schedule:schedule_detail' index=sch.pk %}">{{ sch.eventTitle }}</a>
+                        <br>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div id='tue' style="display: none">
+                    {% for sch in post_list %}
+                        {% if sch.eventDay == 'tue' %}
+                        <a href="{% url 'schedule:schedule_detail' index=sch.pk %}">{{ sch.eventTitle }}</a>
+                        <br>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div id='wed' style="display: none">
+                    {% for sch in post_list %}
+                        {% if sch.eventDay == 'tue' %}
+                        <a href="{% url 'schedule:schedule_detail' index=sch.pk %}">{{ sch.eventTitle }}</a>
+                        <br>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div id='thu' style="display: none">
+                    {% for sch in post_list %}
+                        {% if sch.eventDay == 'tue' %}
+                        <a href="{% url 'schedule:schedule_detail' index=sch.pk %}">{{ sch.eventTitle }}</a>
+                        <br>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div id='fri' style="display: none">
+                    {% for sch in post_list %}
+                        {% if sch.eventDay == 'tue' %}
+                        <a href="{% url 'schedule:schedule_detail' index=sch.pk %}">{{ sch.eventTitle }}</a>
+                        <br>
+                        {% endif %}
+                    {% endfor %}
+                </div>
             </div>
         </div>
         <div id="info" style="text-align:center">

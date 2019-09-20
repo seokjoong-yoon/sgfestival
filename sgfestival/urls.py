@@ -27,7 +27,10 @@ urlpatterns = [
     path('login/', userviews.login, name="login"), 
     path('logout/', userviews.logout, name="logout"), 
     path('song/', gameviews.game1, name="game1"),
+    path('inside/', gameviews.inside, name="inside"),
     path('songresult/', gameviews.game1result, name="game1result"),
+    path('dptsongrank/', gameviews.dptsongrank, name="dptsongrank"), 
+    path('dptinsiderank/', gameviews.dptinsiderank, name="dptinsiderank"),
 ]
 
 urlpatterns+=static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

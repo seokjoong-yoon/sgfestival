@@ -1,7 +1,7 @@
 <h1>노래 맞추기 게임</h1>
 
 <meta charset="utf-8">
-
+<button type="button" onclick="location.href='{%url 'dptsongrank' %}'">학부별 랭킹</button>
 <form method="POST" action="{% url 'game1' %}">
     {% csrf_token %}
 

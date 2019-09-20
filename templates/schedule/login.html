@@ -3,8 +3,6 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'css/input.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'css/UhBeepuding.css' %}">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     </head>
@@ -19,8 +17,8 @@
                 <img id="board-img" src="{% static 'images/home/board.png' %}">
                 <div id="login-div" class="absolute">
                     <form method = "POST" action="{% url 'login' %}">{% csrf_token %}
-                        <div id="id">학번 　<input id="username" name="username" placeholder='' type="text" required></div>       
-                        <div id="pw">비밀번호 <input id="password" name="password" placeholder='' type="password" required></div> 
+                        <span>학번 <input id="username" name="username" placeholder='' type="text" required></span>            
+                        <span>비밀번호 <input id="password" name="password" placeholder='' type="password" required></span> 
 
                         {% if context %}
                                 {{context}}

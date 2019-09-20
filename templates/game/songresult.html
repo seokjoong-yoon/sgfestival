@@ -3,3 +3,7 @@
 <h2>정답수 : {{user.songscore}}</h2>
 
 {{user.song_done}}
+
+<div>{{rank}}/{{total}}등</div>
+
+<button type="button" onclick="location.href='{%url 'dptsongrank' %}'">학부별 랭킹</button>

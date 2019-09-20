@@ -122,3 +122,26 @@ function fri() {
     thur_dis.style.display='none'
     fri_dis.style.display='block'
 }
+
+function cir_th() {
+
+    var a = document.getElementById('cir_thur')
+    var b = document.getElementById('cir_fri')
+    //var x = document.getElementById('bg_thur')
+
+    a.src = "../static/images/thur_circle.png"
+    b.src = "../static/images/fri.png"
+
+    //x.src = "../static/images/bg_thur.png"
+
+}
+function cir_fri() {
+
+    var a = document.getElementById('cir_thur')
+    var b = document.getElementById('cir_fri')
+    //var x = document.getElementById('bg_thur')
+
+    a.src = "../static/images/thur.png"
+    b.src = "../static/images/fri_circle.png"
+    //x.src = "../static/images/bg_fri.png"
+}

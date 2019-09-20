@@ -26,6 +26,7 @@
             min-height: 100%;
             background-position: center;
             background-size: cover;
+            background-attachment: scroll
         }
     </style>
 </head>
@@ -43,50 +44,6 @@
                 <a href="#"><img id=wed src="{% static "images/wed_white.png" %}" style="padding-left: 5%; padding-top: 5%;" onclick="wed()"/></a>
                 <a href="#"><img id=thur src="{% static "images/thur_white.png" %}" style="padding-left: 5%; padding-top: 5%;" onclick="thur()"/></a>
                 <a href="#"><img id=fri src="{% static "images/fri_white.png" %}" style="padding-left: 5%; padding-top: 5%;" onclick="fri()"/></a>
-
-                <!-- 탬플릿태그 하려면 for 문 안에서 {{sch.모델필드}} 형식으로 하면 됨 -->
-                <div id='monday' style="display: block">
-                    {% for sch in post_list %}
-                        {% if sch.eventDay == 'mon' %}
-                        {{ sch.when }}{{ sch.where }}{{ sch.what }}
-                        <hr>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-                <div id='tuesday' style="display: none">
-                    {% for sch in post_list %}
-                        {% if sch.eventDay == 'tue' %}
-                        {{ sch.when }}{{ sch.where }}{{ sch.what }}
-                        <hr>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-                <div id='wednesday' style="display: none">
-                    {% for sch in post_list %}
-                        {% if sch.eventDay == 'wed' %}
-                        {{ sch.when }}{{ sch.where }}{{ sch.what }}
-                        <hr>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-                <div id='thursday' style="display: none">
-                    {% for sch in post_list %}
-                        {% if sch.eventDay == 'thu' %}
-                        {{ sch.when }}{{ sch.where }}{{ sch.what }}
-                        <hr>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-                <div id='friday' style="display: none">
-                    {% for sch in post_list %}
-                        {% if sch.eventDay == 'fri' %}
-                        {{ sch.when }}{{ sch.where }}{{ sch.what }}
-                        <hr>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-
-
             </div>
         </div>
         <div id="info" style="text-align:center">
@@ -95,9 +52,58 @@
             <a href="#"><img src="{% static "images/what.png" %}" style="padding-left: 7%; padding-top: 5%; width:25%;"/></a>
         </div>
         <div id=line>
+            <!-- 탬플릿태그 하려면 for 문 안에서 {{sch.모델필드}} 형식으로 하면 됨 -->
+            <div id='monday' style="display: block">
+                    {% for sch in post_list %}
+                        {% if sch.eventDay == '1' %}
+                        <a href="{% url 'schedule_detail' pk=sch.pk %}">{{ sch.when }}{{ sch.where }}{{ sch.what }}</a>
+                        <img src="{% static "images/line.png" %}" style="width:100%; text-align: center;">
+                        <hr>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div id='tuesday' style="display: none">
+                    {% for sch in post_list %}
+                        {% if sch.eventDay == '2' %}
+                        <a href="{% url 'schedule_detail' pk=sch.pk %}">{{ sch.when }}{{ sch.where }}{{ sch.what }}</a>
+                        <img src="{% static "images/line.png" %}" style="width:100%; text-align: center;">
+                        <hr>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div id='wednesday' style="display: none">
+                    {% for sch in post_list %}
+                        {% if sch.eventDay == '3' %}
+                        {{ sch.when }}{{ sch.where }}{{ sch.what }}
+                        <img src="{% static "images/line.png" %}" style="width:100%; text-align: center;">
+                        <hr>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div id='thursday' style="display: none">
+                    {% for sch in post_list %}
+                        {% if sch.eventDay == '4' %}
+                        {{ sch.when }}{{ sch.where }}{{ sch.what }}
+                        <img src="{% static "images/line.png" %}" style="width:100%; text-align: center;">
+                        <hr>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div id='friday' style="display: none">
+                    {% for sch in post_list %}
+                        {% if sch.eventDay == '5' %}
+                        {{ sch.when }}{{ sch.where }}{{ sch.what }}
+                        <img src="{% static "images/line.png" %}" style="width:100%; text-align: center;">
+                        <hr>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            <!--
             <img src="{% static "images/line.png" %}" style="width:100%; text-align: center; padding-top: 10%">
             <img src="{% static "images/line.png" %}" style="width:100%; text-align: center;">
             <img src="{% static "images/line.png" %}" style="width:100%; text-align: center;">
+            -->
+
         </div>
     </div>
 </body>

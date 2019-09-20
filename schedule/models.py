@@ -3,11 +3,11 @@ from django.db import models
 # Create your models here.
 
 EVENTDAY_CHOICE = (
-    ('mon', 'mon'),
-    ('tue', 'tue'),
-    ('wed', 'wed'),
-    ('thu', 'thu'),
-    ('fri', 'fri'),
+        ('1', '1'),
+        ('2', '2'),
+        ('3','3'),
+        ('4','4'),
+        ('5','5'),
 )
 
 class Schedule(models.Model):

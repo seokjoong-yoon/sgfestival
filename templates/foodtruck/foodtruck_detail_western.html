@@ -5,6 +5,7 @@
 {% for cate in categorized %}
     <br>
     푸드트럭 이름: {{ cate.ftName }}
+    {{cate.generalRating}}
     {% if cate.ftImage %} 
         <img src = "{{ cate.ftImage.url }}" width = 300><br>  <!--푸드트럭 이미지-->
     {% endif %}

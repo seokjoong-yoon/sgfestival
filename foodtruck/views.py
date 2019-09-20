@@ -23,10 +23,19 @@ def foodtruck_review_korean(request, index):
             comment = form.save(commit=False)
             comment.foodtruck = this_foodtruck
             comment.save()
+            i = 0
+            sum = 0
+            for ftr in FoodtruckComment.objects.filter(foodtruck=this_foodtruck):
+                ftr = ftr.ftRating
+                i = i+1
+                sum = sum + ftr
+            average = sum/i
+            this_foodtruck.generalRating = average
+            this_foodtruck.save()
             return redirect("foodtruck:foodtruck_detail_korean")
     else:
         form = FoodtruckCommentForm()
-        # this_foodtruck.averageRating =  FoodtruckComment.objects.all().aggregate(avg_rate = Avg(FoodtruckComment.ftRating, output_field=models.FloatField(),))
+        # this_foodtruck.generalRating =  FoodtruckComment.objects.all().aggregate(avg_rate = Avg(FoodtruckComment.ftRating, output_field=models.FloatField(),))
     return render(request, 'foodtruck/foodtruck_review.html', {'this_foodtruck':this_foodtruck, 'form':form})
 
 def foodtruck_detail_western(request):
@@ -42,6 +51,15 @@ def foodtruck_review_western(request, index):
             comment = form.save(commit=False)
             comment.foodtruck = this_foodtruck
             comment.save()
+            i = 0
+            sum = 0
+            for ftr in FoodtruckComment.objects.filter(foodtruck=this_foodtruck):
+                ftr = ftr.ftRating
+                i = i+1
+                sum = sum + ftr
+            average = sum/i
+            this_foodtruck.generalRating = average
+            this_foodtruck.save()
             return redirect("foodtruck:foodtruck_detail_western")
     else:
         form = FoodtruckCommentForm()
@@ -60,6 +78,15 @@ def foodtruck_review_dessert(request, index):
             comment = form.save(commit=False)
             comment.foodtruck = this_foodtruck
             comment.save()
+            i = 0
+            sum = 0
+            for ftr in FoodtruckComment.objects.filter(foodtruck=this_foodtruck):
+                ftr = ftr.ftRating
+                i = i+1
+                sum = sum + ftr
+            average = sum/i
+            this_foodtruck.generalRating = average
+            this_foodtruck.save()
             return redirect("foodtruck:foodtruck_detail_dessert")
     else:
         form = FoodtruckCommentForm()
@@ -78,6 +105,15 @@ def foodtruck_review_etc(request, index):
             comment = form.save(commit=False)
             comment.foodtruck = this_foodtruck
             comment.save()
+            i = 0
+            sum = 0
+            for ftr in FoodtruckComment.objects.filter(foodtruck=this_foodtruck):
+                ftr = ftr.ftRating
+                i = i+1
+                sum = sum + ftr
+            average = sum/i
+            this_foodtruck.generalRating = average
+            this_foodtruck.save()
             return redirect("foodtruck:foodtruck_detail_etc")
     else:
         form = FoodtruckCommentForm()

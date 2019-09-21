@@ -1,72 +1,87 @@
-<h1>인싸 테스트</h1>
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static '/css/chosun_ilbo_myungjo.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static '/css/insider.css' %}">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    </head>
+    
+    <body>
+        <div id="home">
+            <input type="image" id="home-img" src="{% static '/images/insider/home_button3.png' %}">
+        </div>
+        <div id="header">
+            <img id="header-img" src="{% static '/images/insider/test.png' %}"/>
+        </div>
+        <div id="main">
+            
+            <form method="POST" action="{% url 'inside' %}">{% csrf_token %}
+                <h1>1번</h1>
+                <h1>문제는 여기</h1>
+                답: <textarea name="1" id="1" rows="1" cols="20"></textarea>
+                <h1>2번</h1>
+                <h1>문제는 여기</h1>
+                답: <textarea name="2" id="2" rows="1" cols="20"></textarea><br><br>
+                <h1>3번</h1>
+                <h1>문제는 여기</h1>
+                답: <textarea name="3" id="3" rows="1" cols="20"></textarea><br><br>
+                <h1>4번</h1>
+                <h1>문제는 여기</h1>
+                답: <textarea name="4" id="4" rows="1" cols="20" ></textarea><br><br>
+                <h1>5번</h1>
+                <h1>문제는 여기</h1>
+                답: <textarea name="5" id="5" rows="1" cols="20" ></textarea><br><br>
+                <h1>6번</h1>
+                <h1>문제는 여기</h1>
+                답: <textarea name="6" id="6" rows="1" cols="20" ></textarea><br><br>
+                <h1>7번</h1>
+                <h1>문제는 여기</h1>
+                답: <textarea name="7" id="7" rows="1" cols="20" ></textarea><br><br>
+                <h1>8번</h1>
+                <h1>문제는 여기</h1>
+                답: <textarea name="8" id="8" rows="1" cols="20" ></textarea><br><br>
+                <h1>9번</h1>
+                <h1>문제는 여기</h1>
+                답: <textarea name="9" id="9" rows="1" cols="20" ></textarea><br><br>
+                <h1>10번</h1>
+                <h1>문제는 여기</h1>
+                답: <textarea name="10" id="10" rows="1" cols="20" ></textarea><br><br>
+                <h1>11번</h1>
+                <h1>문제는 여기</h1>
+                답: <textarea name="11" id="11" rows="1" cols="20" ></textarea><br><br>
+                <h1>12번</h1>
+                <h1>문제는 여기</h1>
+                답: <textarea name="12" id="12" rows="1" cols="20" ></textarea><br><br>
+                <h1>13번</h1>
+                <h1>문제는 여기</h1>
+                답: <textarea name="13" id="13" rows="1" cols="20" ></textarea><br><br>
+                <h1>14번</h1>
+                <h1>문제는 여기</h1>
+                답: <textarea name="14" id="14" rows="1" cols="20" ></textarea><br><br>
+                <h1>15번</h1>
+                <h1>문제는 여기</h1>
+                답: <textarea name="15" id="15" rows="1" cols="20" ></textarea><br><br>
+                <h1>16번</h1>
+                <h1>문제는 여기</h1>
+                답: <textarea name="16" id="16" rows="1" cols="20" ></textarea><br><br>
+                <h1>17번</h1>
+                <h1>문제는 여기</h1>
+                답: <textarea name="17" id="17" rows="1" cols="20" ></textarea><br><br>
+                <h1>18번</h1>
+                <h1>문제는 여기</h1>
+                답: <textarea name="18" id="18" rows="1" cols="20" ></textarea><br><br>
+                <h1>19번</h1>
+                <h1>문제는 여기</h1>
+                답: <textarea name="19" id="19" rows="1" cols="20" ></textarea><br><br>
+                <h1>20번</h1>
+                <h1>문제는 여기</h1>
+                답: <textarea name="20" id="20" rows="1" cols="20" ></textarea><br><br>
+                
+                <button type="submit">제출하기</button>
+            </form>
+            <button type="button" onclick="location.href='{%url 'dptinsiderank' %}'">학부별 랭킹</button>
+        </div>
+    </body>
 
-<meta charset="utf-8">
-
-<form method="POST" action="{% url 'inside' %}">{% csrf_token %}
-<h1>1번</h1>
-<h1>문제는 여기</h1>
-답: <textarea name="1" id="1" rows="1" cols="20" style="ime-mode:auto; border:none; border-bottom:1px solid black;"></textarea>
-<h1>2번</h1>
-<h1>문제는 여기</h1>
-답: <textarea name="2" id="2" rows="1" cols="20" style="ime-mode:auto; border:none; border-bottom:1px solid black;"></textarea><br><br>
-<h1>3번</h1>
-<h1>문제는 여기</h1>
-답: <textarea name="3" id="3" rows="1" cols="20" style="ime-mode:auto; border:none; border-bottom:1px solid black;"></textarea><br><br>
-<h1>4번</h1>
-<h1>문제는 여기</h1>
-답: <textarea name="4" id="4" rows="1" cols="20" style="ime-mode:auto; border:none; border-bottom:1px solid black;"></textarea><br><br>
-<h1>5번</h1>
-<h1>문제는 여기</h1>
-답: <textarea name="5" id="5" rows="1" cols="20" style="ime-mode:auto; border:none; border-bottom:1px solid black;"></textarea><br><br>
-<h1>6번</h1>
-<h1>문제는 여기</h1>
-답: <textarea name="6" id="6" rows="1" cols="20" style="ime-mode:auto; border:none; border-bottom:1px solid black;"></textarea><br><br>
-<h1>7번</h1>
-<h1>문제는 여기</h1>
-답: <textarea name="7" id="7" rows="1" cols="20" style="ime-mode:auto; border:none; border-bottom:1px solid black;"></textarea><br><br>
-<h1>8번</h1>
-<h1>문제는 여기</h1>
-답: <textarea name="8" id="8" rows="1" cols="20" style="ime-mode:auto; border:none; border-bottom:1px solid black;"></textarea><br><br>
-<h1>9번</h1>
-<h1>문제는 여기</h1>
-답: <textarea name="9" id="9" rows="1" cols="20" style="ime-mode:auto; border:none; border-bottom:1px solid black;"></textarea><br><br>
-<h1>10번</h1>
-<h1>문제는 여기</h1>
-답: <textarea name="10" id="10" rows="1" cols="20" style="ime-mode:auto; border:none; border-bottom:1px solid black;"></textarea><br><br>
-<h1>11번</h1>
-<h1>문제는 여기</h1>
-답: <textarea name="11" id="11" rows="1" cols="20" style="ime-mode:auto; border:none; border-bottom:1px solid black;"></textarea><br><br>
-<h1>12번</h1>
-<h1>문제는 여기</h1>
-답: <textarea name="12" id="12" rows="1" cols="20" style="ime-mode:auto; border:none; border-bottom:1px solid black;"></textarea><br><br>
-<h1>13번</h1>
-<h1>문제는 여기</h1>
-답: <textarea name="13" id="13" rows="1" cols="20" style="ime-mode:auto; border:none; border-bottom:1px solid black;"></textarea><br><br>
-<h1>14번</h1>
-<h1>문제는 여기</h1>
-답: <textarea name="14" id="14" rows="1" cols="20" style="ime-mode:auto; border:none; border-bottom:1px solid black;"></textarea><br><br>
-<h1>15번</h1>
-<h1>문제는 여기</h1>
-답: <textarea name="15" id="15" rows="1" cols="20" style="ime-mode:auto; border:none; border-bottom:1px solid black;"></textarea><br><br>
-<h1>16번</h1>
-<h1>문제는 여기</h1>
-답: <textarea name="16" id="16" rows="1" cols="20" style="ime-mode:auto; border:none; border-bottom:1px solid black;"></textarea><br><br>
-<h1>17번</h1>
-<h1>문제는 여기</h1>
-답: <textarea name="17" id="17" rows="1" cols="20" style="ime-mode:auto; border:none; border-bottom:1px solid black;"></textarea><br><br>
-<h1>18번</h1>
-<h1>문제는 여기</h1>
-답: <textarea name="18" id="18" rows="1" cols="20" style="ime-mode:auto; border:none; border-bottom:1px solid black;"></textarea><br><br>
-<h1>19번</h1>
-<h1>문제는 여기</h1>
-답: <textarea name="19" id="19" rows="1" cols="20" style="ime-mode:auto; border:none; border-bottom:1px solid black;"></textarea><br><br>
-<h1>20번</h1>
-<h1>문제는 여기</h1>
-답: <textarea name="20" id="20" rows="1" cols="20" style="ime-mode:auto; border:none; border-bottom:1px solid black;"></textarea><br><br>
-
-<button type="submit">제출하기</button>
-</form>
-
-
-
-<button type="button" onclick="location.href='{%url 'dptinsiderank' %}'">학부별 랭킹</button>
+</html>

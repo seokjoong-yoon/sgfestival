@@ -47,7 +47,9 @@
                 {% else %}
                     <img id="flat_mp3" src="{% static 'images/home/flat_mp3.png' %}" class="absolute" onclick="WarnToLogIn();">
                 {% endif %}
-                <img id="books" src="{% static 'images/home/books.png' %}" class="absolute">
+                <a href="{% url 'inside' %}">
+                    <img id="books" src="{% static 'images/home/books.png' %}" class="absolute">
+                </a>
                 <img id="melody" src="{% static 'images/home/melody.png' %}" class="absolute">            
             </div>
         </div>

@@ -1,0 +1,33 @@
+body {
+    margin : 0 !important;    
+    background-color : #cccccc;
+    width : 100%;
+}
+
+#home{
+    background-color : #8E6A28;
+}
+
+#header{
+    margin-top : 12px;
+}
+
+#home-img{
+    height: 48px;
+    margin-bottom : 12px;
+}
+
+#header-img{
+    width : 100%;
+    display: block;
+}
+textarea{
+    ime-mode:auto; 
+    border:none; 
+    border-bottom:1px solid black;
+    background-color : transparent;
+}
+
+h1{
+    font-family: 'chosun_ilbo_myungjo.ttfRg';   
+}

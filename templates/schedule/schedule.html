@@ -78,7 +78,7 @@
             <div id='monday' style="display: block">
                     {% for sch in post_list %}
                         {% if sch.eventDay == '1' %}
-                        <a href="{% url 'schedule_detail' pk=sch.pk %}">{{ sch.when }}{{ sch.where }}{{ sch.what }}</a>
+                        <a href="{% url 'schedule:schedule_detail' index=sch.pk %}">{{ sch.when }}{{ sch.where }}{{ sch.what }}</a>
                         <img src="{% static "images/line.png" %}" style="width:100%; text-align: center;">
                         <hr>
                         {% endif %}

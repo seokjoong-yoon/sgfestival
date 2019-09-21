@@ -30,7 +30,7 @@
         @font-face { font-family: 'UhBeepuding'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeepuding.woff') format('woff'); font-weight: normal; font-style: normal; }
         #content_name{
             text-align: center;
-            padding-top:380px;
+            padding-top:400px;
             font-family: UhBeepuding;
             color: white;
             font-size:30px;
@@ -45,7 +45,7 @@
         </div>
 
         <div id="magnet" style="position: absolute;">
-            {{ post.eventImage.url }}
+            <img src="{{ post.eventImage.url }}" alt="ddddd" style="width:90%; padding-top:25px;padding-left:40px;">
         </div>
 
         <div id="content" style="position: absolute;">
@@ -53,15 +53,11 @@
         </div>
  
         <div id="content_name_box" style="position: absolute;">
-            <img src="{% static "images/detail_name.png" %}" style="position: relative;top:360px; width:100%;"/>
+            <img src="{% static "images/detail_name.png" %}" style="position: relative;top:380px; width:100%;"/>
         </div>
         <div id="content_name">
             {{ post.what }}
         </div>
-
-
-
-        
     </div>
 </body>
 

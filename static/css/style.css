@@ -21,15 +21,3 @@
     padding-left: 100%;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: 1.5fr 3fr 1.5fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: "when_grid where_grid what_grid";
-  }
-  
-.when_grid { grid-area: when_grid; }
-
-.where_grid { grid-area: where_grid; }
-
-.what_grid { grid-area: what_grid; }

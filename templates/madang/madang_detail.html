@@ -27,24 +27,36 @@
             background-position: center;
             background-size: cover;
         }
+        @font-face { font-family: 'UhBeepuding'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeepuding.woff') format('woff'); font-weight: normal; font-style: normal; }
+        #content_name{
+            text-align: center;
+            padding-top:400px;
+            font-family: UhBeepuding;
+            color: white;
+            font-size:30px;
+        }
     </style>
 </head>
 
 <body>
     <div id="total">
         <div id="top">
-            <a href="#"><img src="{% static "images/back_button.png" %}" style="padding-top: 5%; padding-left: 5%; width: 25%;"/></a>
+            <a href=#><img src="{% static "images/back_button.png" %}" style="padding-top: 5%; padding-left: 5%; width: 25%;"/></a>
         </div>
-        <!--
+
         <div id="magnet" style="position: absolute;">
-            <img src="{% static "images/magnet.png" %}" style="width:20%; position: relative;text-align: center;" />
+            <img src="{{ madang.image1.url }}" alt="ddddd" style="width:90%; padding-top:25px;padding-left:40px;">
         </div>
-        -->
+
         <div id="content" style="position: absolute;">
             <img src="{% static "images/detail_box.png" %}" style="position: relative; width:100%; text-align: center;" />
         </div>
-        <div id="content_name" style="position: absolute;">
-            <img src="{% static "images/detail_name.png" %}" style="position: relative;top:360px; width:100%;"/>
+ 
+        <div id="content_name_box" style="position: absolute;">
+            <img src="{% static "images/detail_name.png" %}" style="position: relative;top:380px; width:100%;"/>
+        </div>
+        <div id="content_name">
+            {{ madang.title }}
         </div>
     </div>
 </body>

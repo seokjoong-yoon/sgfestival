@@ -33,13 +33,23 @@
             font-family: UhBeepuding;
             font-size:20px;
         }
-        #a{color: white;}
-        #a:link {text-decoration: none; color: white;}
-        #a:visited {text-decoration: none; color: white;}
-        #a:active {text-decoration: none; color: white;}
-        div{
-            padding:0;
+
+        #grid-container {
+            display: grid;
+            grid-template-rows: 45px;
+            grid-template-columns: 60px 150px 100px;
+            
+            grid-template-areas: "when_grid where_grid what_grid";
+            text-align: center;
+            padding-left: 13%;
         }
+
+        #when_grid { grid-area: when_grid; }
+
+        #where_grid { grid-area: where_grid; }
+
+        #what_grid { grid-area: what_grid; }
+
     </style>
 </head>
 
@@ -58,7 +68,7 @@
                 <a href="#"><img id=fri src="{% static "images/fri_white.png" %}" style="padding-left: 5%; padding-top: 5%;" onclick="fri()"/></a>
             </div>
         </div>
-        <div id="info" style="text-align:center">
+        <div id="info" style="text-align:center; padding-bottom:10%">
             <a href="#"><img src="{% static "images/when.png" %}" style="padding-right: 7%; padding-top: 5%; width:25%;"/></a>
             <a href="#"><img src="{% static "images/where.png" %}" style=" padding-top: 5%; width:25%;"/></a>
             <a href="#"><img src="{% static "images/what.png" %}" style="padding-left: 7%; padding-top: 5%; width:25%;"/></a>
@@ -79,9 +89,9 @@
                         {% if sch.eventDay == '2' %}
                         <a href="{% url 'schedule:schedule_detail' index=sch.pk %}"style="color:white;">
                             <div id="grid-container">
-                                <div id="when_grid">{{ sch.when }}</div>
-                                <div id="where_grid">{{ sch.where }}</div>
-                                <div id="what_grid">{{ sch.what }}</div>
+                                    <div id="when_grid">{{ sch.when }}</div>
+                                    <div id="where_grid">{{ sch.where }}</div>
+                                    <div id="what_grid">{{ sch.what }}</div>
                             </div>
                         </a>
                         <img src="{% static "images/line.png" %}" style="width:100%; text-align: center;">

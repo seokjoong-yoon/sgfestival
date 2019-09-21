@@ -5,6 +5,11 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <script language = "javaScript">
+            function WarnToLogIn(){
+                alert("로그인이 필요한 기능입니다!");
+            }
+        </script>
     </head>
     
     <body>
@@ -34,10 +39,13 @@
             <div id="desk">
                 <img id="desk-img" src="{% static 'images/home/desk.png' %}" class="absolute">
                 <img id="chair" src="{% static 'images/home/chair.png' %}" class="absolute">
-                
+                {% if user.is_authenticated %}
                 <a href="{% url 'game1' %}">
                     <img id="flat_mp3" src="{% static 'images/home/flat_mp3.png' %}" class="absolute">
                 </a>
+                {% else %}
+                    <img id="flat_mp3" src="{% static 'images/home/flat_mp3.png' %}" class="absolute" onclick="WarnToLogIn();">
+                {% endif %}
                 <img id="books" src="{% static 'images/home/books.png' %}" class="absolute">
                 <img id="melody" src="{% static 'images/home/melody.png' %}" class="absolute">            
             </div>

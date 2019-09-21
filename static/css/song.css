@@ -6,40 +6,44 @@
 #gamefield{
     padding-top: 10%;
     padding-left: 6%;
-    height: 80%;
-    width:70%;
+    position: relative;
 }
 #game01{
     height: 1370px;
     width: 900px;
-    position: absolute;
 }
-#inputdiv{
-    padding-top: 65%;
+#question{
+    font-size: 50pt;
+    position: absolute;
+    top:30%;
+    left:35%;
     margin: auto;
-    height: 100px;
-    width: 670px;
+}
+#resultdiv{
+    font-size: 28pt;
     position: absolute;
-    text-align: center;
+    top:12%;
+    left:20%;
+    margin: auto;
+    z-index: 1;  
+    text-align: center;  
 }
-
 #answerinput{
-    height: 70px;
-    width: 300px;
+    height: 95px;
+    width: 480px;
+    position: absolute;
+    top: 47%;
+    left: 25%;
+    border: none;
+    border-radius: 40px 40px;
+    font-size: 50pt;
 }
 
-#buttondiv{
-    padding-top: 930px;
-    padding-left: 21%;
-    
-    padding-right: 160px;
-    text-align: center;
-    height:500px;
-    widows: 500px;
-}
 
 #button{
     position: absolute;
     height: 200px;
     width: 200px;
+    top: 69%;
+    left: 40%;
 }

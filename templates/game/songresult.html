@@ -1,12 +1,5 @@
-<h1>노래게임 결과</h1>
-
-<h2>정답수 : {{user.songscore}}</h2>
-
-{{user.song_done}}
-
-<div id="rank"></div>
-
-<button type="button" onclick="location.href='{%url 'dptsongrank' %}'">학부별 랭킹</button>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/song.css' %}">
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
@@ -16,10 +9,38 @@ $.ajax({
     contentType: "json",
     success: function(context){
         //alert("success");
-        $("#rank").text(context['rank']+"/"+context['total']);
+        $("#rank").text(context['rank']+"등!(전체 : "+context['total']+"명)");
     },
     error: function(response){
         alert('fail');
     }
 })
 </script>
+{% if user.is_authenticated %}
+<div id="background">
+        <div id="homebuttondiv">
+            <a href="{% url 'home' %}">
+            <img id="homebuttonimg" src="{% static 'images/song/home_button2.png' %}">
+            </a>
+        </div>
+       <div id="gamefield">
+           <img id = "game01" src="{% static 'images/song/mp3_nobubble.png' %}">
+           <div id="resultdiv">
+                <h1>내 성적</h1><br>
+                {% if user.songscore == 4 or count == 4%}
+                <h1>만점</h1><br>
+                {% else %}
+                {% if user.song_done == True %}
+                <h1>4점만에 {{user.songscore}}점</h1>
+                {% else %}
+                <h1>4점만에 {{count}}점</h1>
+                {% endif %}
+                {% endif %}
+                <h1 id="rank"></h1>
+            </div>
+           <img  id="button" src="{% static 'images/song/exit.png' %}" onClick="location.href='{% url "home" %}';">
+    </div> 
+    </div>
+{% else %}
+alert("로그인이 필요합니다")
+{% endif %}

@@ -20,7 +20,70 @@
     <button type="submit">제출하기</button>
 </form>
 -->
+<script type="text/javascript">
+    var num = 0;
+    var ansArray =new Array(1);
+    function begin(){
+        var q = document.getElementById('question');
+        var btn = document.getElementById('button');
+        var game = document.getElementById('game01');
+        game.src = "{% static 'images/song/mp3_bubble.png' %}";
+        q.innerHTML='연습문제';
+        btn.src = "{% static 'images/song/next.png' %}";
+        document.getElementById('answerinput').style.backgroundColor="white";
+        btn.onclick = function(){ next(); };
+    }
+    function next(){
+        var q = document.getElementById('question');
+        var r = document.getElementById('record');
+        var btn = document.getElementById('button');
+        var ans = document.getElementById('answerinput');
+        if(num<4){
+            if(num==0){
+                num++;
+                q.innerHTML=num + "번 문제";         
+            }
+            else{
+                num++;
+                q.innerHTML=num + "번 문제";      
+                ansArray.push(ans.value);
+                ans.value="";
+            }
+        }
+        else{
+            ansArray.push(ans.value);
+            q.innerHTML= "내 성적";
+            btn.src = "{% static 'images/song/exit.png' %}";
+            //document.gameform.submit(ansArray);
+            post_to_url("{% url 'game1' %}", ansArray);
+            ans.value=ansArray;
+            btn.onclick = function(){ location.href="{% url 'home' %}"; };
+            ans.style.backgroundColor="rgb(242, 242, 242)";
+        }
 
+    }
+    function post_to_url(path, params, method) {
+    method = method || "post"; 
+    var form = document.createElement("form");
+    form.setAttribute("method", method);
+    form.setAttribute("action", path);
+    for(var key in params) {
+        var hiddenField = document.createElement("input");
+        hiddenField.setAttribute("type", "hidden");
+        hiddenField.setAttribute("name", key);
+        hiddenField.setAttribute("value", params[key]);
+        form.appendChild(hiddenField);
+    }
+    var hiddenField = document.createElement("input");
+        hiddenField.setAttribute("type", "hidden");
+        hiddenField.setAttribute("name", "csrfmiddlewaretoken");
+        hiddenField.setAttribute("value", "{{csrf_token}}");
+        form.appendChild(hiddenField);
+    document.body.appendChild(form);
+    form.submit();
+}
+
+</script>
 <div id=background>
         <div id=homebuttondiv>
             <a href="{% url 'home' %}">
@@ -29,8 +92,12 @@
         </div>
        <div id=gamefield>
            <img id = "game01" src="{% static 'images/song/mp3_nobubble.png' %}">
-            <div id = "buttondiv">
-                <img  id="button" src="{% static 'images/song/next.png' %}" onclick="">
-            </div>
-       </div> 
+           <p id = "question">처음 시작</p> 
+           <form method="POST" action="{% url 'game1' %}" name="gameform">
+                {% csrf_token %}
+            <input type="text" id="answerinput" style="background-color: rgb(242, 242, 242)">
+            
+           <img  id="button" src="{% static 'images/song/start.png' %}" onClick="begin();">
+    </form>
+    </div> 
     </div>

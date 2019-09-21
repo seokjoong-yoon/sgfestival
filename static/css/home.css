@@ -131,6 +131,14 @@ body {
     right: 1%;
 }
 
+#logout{
+    position: absolute;
+    height: 30%;
+    z-index: 100;
+    top : 70%;
+    right: 1%;
+}
+
 #signup{
     position: absolute;
     height: 30%;

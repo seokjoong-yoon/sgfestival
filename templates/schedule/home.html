@@ -17,8 +17,9 @@
             <div id="motto">
                 <img id="motto-img" src="{% static 'images/home/sogang.png' %}">
                 {% if user.is_authenticated %}
-                    <p>{{user.username}}님</p>
-                    <a href="{% url 'logout' %}">로그아웃</a>
+                    <a href="{% url 'logout' %}">
+                        <img id="logout" src="{% static 'images/home/logout.png' %}">
+                    </a>
                 {% else %}
                     <a href="{% url 'login' %}">
                         <img id="login" src="{% static 'images/home/login.png' %}">

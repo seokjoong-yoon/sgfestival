@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from accounts import views as userviews
 from game import views as gameviews
+from attend import views as attendviews
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -33,6 +34,7 @@ urlpatterns = [
     path('dptinsiderank/', gameviews.dptinsiderank, name='dptinsiderank'),
     path('song/songrank/', gameviews.songrank, name="songrank"),
     path('inside/insiderank/', gameviews.insiderank, name="insiderank"),
+    path('attend/', attendviews.attend, name='attend'),
 ]
 
 urlpatterns+=static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

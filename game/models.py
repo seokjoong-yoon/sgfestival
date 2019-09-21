@@ -8,3 +8,4 @@ class game1(models.Model):
     author=models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     userid=models.TextField(default='')
     university=models.TextField(default='')
+    

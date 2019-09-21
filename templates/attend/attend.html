@@ -1,0 +1,129 @@
+<table border="1">
+        <th>날짜/이름</th>
+        <th>출석</th>
+        <tr>
+            <td>9월 24일(화)</td>
+            <td>
+                <script>
+                    a={{tue}}
+                    if(a==1){
+                        document.write('출첵 완료!');
+                    }
+                    else if(a==-1){
+                        document.write('날짜 지나감');
+                    }
+                    else if(a==2){
+                        document.write('오늘인데 아직 안함');
+                    }
+                    else if(a==0){
+                        document.write('아직 멀었음')
+                    }
+                </script>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>9월 25일(수)</td>
+            <td>
+                <script>
+                    a={{wed}}                    
+                    if(a==1){
+                        document.write('출첵 완료!');
+                    }
+                    else if(a==-1){
+                        document.write('날짜 지나감');
+                    }
+                    else if(a==2){
+                        document.write('오늘인데 아직 안함');
+                    }
+                    else if(a==0){
+                        document.write('아직 멀었음')
+                    }
+                </script>
+            </td>
+        </tr>
+        <tr>
+            <td>9월 26일(목)</td>
+            <td>
+                <script>
+                    a={{thur}}
+                    if(a==1){
+                        document.write('출첵 완료!');
+                    }
+                    else if(a==-1){
+                        document.write('날짜 지나감');
+                    }
+                    else if(a==2){
+                        document.write('오늘인데 아직 안함');
+                    }
+                    else if(a==0){
+                        document.write('아직 멀었음')
+                    }
+                </script>
+            </td>
+        </tr>
+        <tr>
+            <td>9월 27일(금)</td>
+            <td>
+                <script>
+                    a={{fri}}
+                    if(a==1){
+                        document.write('출첵 완료!');
+                    }
+                    else if(a==-1){
+                        document.write('날짜 지나감');
+                    }
+                    else if(a==2){
+                        document.write('오늘인데 아직 안함');
+                    }
+                    else if(a==0){
+                        document.write('아직 멀었음')
+                    }
+                </script>
+            </td>
+        </tr>
+        <tr>
+            <td>9월 21일(토)</td>
+            <td>
+                <script>
+                    a={{sat}}
+                    if(a==1){
+                        document.write('출첵 완료!');
+                    }
+                    else if(a==-1){
+                        document.write('날짜 지나감');
+                    }
+                    else if(a==2){
+                        document.write('오늘인데 아직 안함');
+                        document.write('<form method="POST" action="{% url "attend" %}">')
+                        document.write('{% csrf_token %}')
+                        document.write('<button type="submit">출첵!</button>')
+                        document.write('</form>')
+                    }
+                    else if(a==0){
+                        document.write('아직 멀었음')
+                    }
+                </script>
+            </td>
+        </tr>
+        <tr>
+            <td>9월 22일(일)</td>
+            <td>
+                <script>
+                    a={{sun}}
+                    if(a==1){
+                        document.write('출첵 완료!');
+                    }
+                    else if(a==-1){
+                        document.write('날짜 지나감');
+                    }
+                    else if(a==2){
+                        document.write('오늘인데 아직 안함');
+                    }
+                    else if(a==0){
+                        document.write('아직 멀었음')
+                    }
+                </script>                
+            </td>
+        </tr>
+</table>

@@ -13,4 +13,6 @@ class Myuser(AbstractUser):
     wed=models.IntegerField(default=0)
     thur=models.IntegerField(default=0)
     fri=models.IntegerField(default=0)
+    sat=models.IntegerField(default=0)
+    sun=models.IntegerField(default=0)
     attendcount=models.IntegerField(default=0)

@@ -7,10 +7,16 @@
                 <script>
                     a={{tue}}
                     if(a==1){
-                        document.write(1);
+                        document.write('출첵 완료!');
                     }
                     else if(a==-1){
-                        document.write(-1);
+                        document.write('날짜 지나감');
+                    }
+                    else if(a==2){
+                        document.write('오늘인데 아직 안함');
+                    }
+                    else if(a==0){
+                        document.write('아직 멀었음')
                     }
                 </script>
                 
@@ -20,12 +26,18 @@
             <td>9월 25일(수)</td>
             <td>
                 <script>
-                    a={{wed}}
+                    a={{wed}}                    
                     if(a==1){
-                        document.write(1);
+                        document.write('출첵 완료!');
                     }
                     else if(a==-1){
-                        document.write(-1);
+                        document.write('날짜 지나감');
+                    }
+                    else if(a==2){
+                        document.write('오늘인데 아직 안함');
+                    }
+                    else if(a==0){
+                        document.write('아직 멀었음')
                     }
                 </script>
             </td>
@@ -36,10 +48,16 @@
                 <script>
                     a={{thur}}
                     if(a==1){
-                        document.write(1);
+                        document.write('출첵 완료!');
                     }
                     else if(a==-1){
-                        document.write(-1);
+                        document.write('날짜 지나감');
+                    }
+                    else if(a==2){
+                        document.write('오늘인데 아직 안함');
+                    }
+                    else if(a==0){
+                        document.write('아직 멀었음')
                     }
                 </script>
             </td>
@@ -50,12 +68,62 @@
                 <script>
                     a={{fri}}
                     if(a==1){
-                        document.write(1);
+                        document.write('출첵 완료!');
                     }
                     else if(a==-1){
-                        document.write(-1);
+                        document.write('날짜 지나감');
+                    }
+                    else if(a==2){
+                        document.write('오늘인데 아직 안함');
+                    }
+                    else if(a==0){
+                        document.write('아직 멀었음')
                     }
                 </script>
+            </td>
+        </tr>
+        <tr>
+            <td>9월 21일(토)</td>
+            <td>
+                <script>
+                    a={{sat}}
+                    if(a==1){
+                        document.write('출첵 완료!');
+                    }
+                    else if(a==-1){
+                        document.write('날짜 지나감');
+                    }
+                    else if(a==2){
+                        document.write('오늘인데 아직 안함');
+                        document.write('<form method="POST" action="{% url "attend" %}">')
+                        document.write('{% csrf_token %}')
+                        document.write('<button type="submit">출첵!</button>')
+                        document.write('</form>')
+                    }
+                    else if(a==0){
+                        document.write('아직 멀었음')
+                    }
+                </script>
+            </td>
+        </tr>
+        <tr>
+            <td>9월 22일(일)</td>
+            <td>
+                <script>
+                    a={{sun}}
+                    if(a==1){
+                        document.write('출첵 완료!');
+                    }
+                    else if(a==-1){
+                        document.write('날짜 지나감');
+                    }
+                    else if(a==2){
+                        document.write('오늘인데 아직 안함');
+                    }
+                    else if(a==0){
+                        document.write('아직 멀었음')
+                    }
+                </script>                
             </td>
         </tr>
 </table>

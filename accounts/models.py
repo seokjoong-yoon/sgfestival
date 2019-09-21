@@ -9,3 +9,8 @@ class Myuser(AbstractUser):
     insidescore=models.IntegerField(default=0)     #인싸 게임 점수
     song_done=models.BooleanField(default=False)    #노래 게임 완료
     inside_done=models.BooleanField(default=False)  #인싸 게임 완료
+    tue=models.IntegerField(default=0)
+    wed=models.IntegerField(default=0)
+    thur=models.IntegerField(default=0)
+    fri=models.IntegerField(default=0)
+    attendcount=models.IntegerField(default=0)

@@ -21,9 +21,9 @@ def game1(request):
     if request.method=="POST":
         count=0
         real_ans = ['위아래', '빠빠빠', '비밀번호486', '내귀에캔디', '거북선',
-                    '눈코입', 'BOPEEPBOPEEP', 'TELLME', 'GENTLEMEN', 'HOTSUMMER',
-                    '10점만점에10점', '샤방샤방', '벚꽃엔딩', 'GOODBYEBABY', 'HONEY',
-                    'CALLMEBABY', '로꾸거', '나혼자', 'ROSE', 'NONONO']
+                    '눈코입', 'bopeepbopeep', 'tellme', 'gentleman', 'hotsummer',
+                    '10점만점에10점', '샤방샤방', '벚꽃엔딩', 'goodbyebaby', 'honey',
+                    'callmebaby', '로꾸거', '나혼자', 'rose', 'nonono']
         ans_set = []
         for i in range(1, 21):           #(1,n) 1부터 n-1까지
             l = str(i)
@@ -77,8 +77,8 @@ def inside(request):
         return render(request, 'game/insideresult.html', {"rank":rank+1,"total":total})
     if request.method=="POST":
         count=0
-        real_ans = ['응답하라1994', '별에서온그대', '꽃보다남자', 'GEE', '으르렁',
-                    '루시퍼', 'NONONO', '내꺼하자', 'SOHOT', '차카니',
+        real_ans = ['응답하라1994', '별에서온그대', '꽃보다남자', 'gee', '으르렁',
+                    '루시퍼', 'nonono', '내꺼하자', 'sohot', '차카니',
                     '멜짱', '쿠우', '텐텐', '미니벨', '아폴로']
         ans_set = []
         for i in range(1, 16):           #(1,n) 1부터 n-1까지

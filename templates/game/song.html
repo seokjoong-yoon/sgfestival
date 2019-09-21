@@ -1,7 +1,9 @@
-<h1>노래 맞추기 게임</h1>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/song.css' %}">
+<!--<h1>노래 맞추기 게임</h1>
 
 <meta charset="utf-8">
-
+<button type="button" onclick="location.href='{%url 'dptsongrank' %}'">학부별 랭킹</button>
 <form method="POST" action="{% url 'game1' %}">
     {% csrf_token %}
 
@@ -17,4 +19,18 @@
     <br>
     <button type="submit">제출하기</button>
 </form>
+-->
 
+<div id=background>
+        <div id=homebuttondiv>
+            <a href="{% url 'home' %}">
+            <img id=homebuttonimg src="{% static 'images/song/home_button2.png' %}">
+            </a>
+        </div>
+       <div id=gamefield>
+           <img id = "game01" src="{% static 'images/song/mp3_nobubble.png' %}">
+            <div id = "buttondiv">
+                <img  id="button" src="{% static 'images/song/next.png' %}" onclick="">
+            </div>
+       </div> 
+    </div>

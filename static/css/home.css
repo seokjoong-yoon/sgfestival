@@ -1,0 +1,149 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#wall{
+    background-color: #FEF6E9;
+    width : 100%;
+    height: 70%;
+}
+
+#brown{
+    background-color: #5c4c16;
+    width : 100%;
+    height: 5%;
+}
+
+#gray{
+    background-color: #d5cec7;
+    width : 100%;
+    height: 50%;
+}
+
+#motto{
+    position: relative;
+    padding : 5% 0;
+}
+
+#board{
+    position: relative;
+}
+
+#desk{
+    position: relative;
+}
+
+#motto-img{
+    margin : 0 auto;
+    display: block;
+    border-radius: 2%;
+    height: 15%;
+}
+
+#board-img{
+    display: block;
+    margin: 0 0 0 -10%;
+    width: 110%;
+    height: 70%;
+}
+
+.absolute{
+    display: block;
+    position: absolute;
+}
+
+#flea{
+    height: 40%;
+    left: 10%;
+    top: 10%;
+}
+
+#timetable{
+    height: 30%;
+    left: 70%;
+    top: 10%;
+}
+
+#food{
+    height: 25%;
+    left: 20%;
+    top: 55%;
+}
+
+#event{
+    height: 40%;
+    left: 55%;
+    top: 50%;
+}
+
+#desk-img{
+    width: 80%;
+    max-width: 2000px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -5%);
+}
+
+#chair{
+    width: 40%;
+    max-width: 1000px;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, 20%);
+    z-index: 3;
+}
+
+#flat_mp3{
+    width: 28%;
+    max-width: 700px;
+    left: 50%;
+    transform: translate(+20%, -10%);
+    z-index: 2;
+}
+
+#books{
+    width: 25%;
+    max-width: 625px;
+    left: 50%;
+    transform: translate(-120%, -10%);
+    z-index: 2;
+}
+
+#melody{
+    width: 20%;
+    max-width: 500px;
+    left: 50%;
+    transform: translate(100%, -50%);
+    z-index: 5;
+}
+
+#login{
+    position: absolute;
+    height: 30%;
+    z-index: 100;
+    top : 70%;
+    right: 1%;
+}
+
+#signup{
+    position: absolute;
+    height: 30%;
+    z-index: 10;
+    top : 70%;
+    right: 20%;
+}
+
+.board-contents{
+    position: absolute;
+    z-index: 10;
+    top :50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width : 80%;
+}

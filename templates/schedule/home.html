@@ -1,10 +1,48 @@
+{% load staticfiles %}
+{% load static %}
 <html>
-    {% if user.is_authenticated %}    
-        <p>{{user.username}}님</p>
-        <a href="{% url 'logout' %}">로그아웃</a>
-    {% else %}
-    <a href="{% url 'login' %}">로그인</a>
-    <a href="{% url 'register' %}">회원가입</a>
-  {% endif %}  
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    </head>
+    
+    <body>
+        <div id="wall">
+            <div id="motto">
+                <img id="motto-img" src="{% static 'images/home/sogang.png' %}">
+                {% if user.is_authenticated %}
+                    <p>{{user.username}}님</p>
+                    <a href="{% url 'logout' %}">로그아웃</a>
+                {% else %}
+                    <a href="{% url 'login' %}">
+                        <img id="login" src="{% static 'images/home/login.png' %}">
+                    </a>
+                    <a href="{% url 'register' %}">
+                        <img id="signup" src="{% static 'images/home/signup.png' %}">
+                    </a>
+                {% endif %} 
+            </div>
 
+            <div id="board">
+                <img id="board-img" src="{% static 'images/home/board.png' %}">
+                <img id="flea" src="{% static 'images/home/flea_button.png' %}" class="absolute">
+                <img id="timetable" src="{% static 'images/home/time_table_button.png' %}" class="absolute">
+                <img id="food" src="{% static 'images/home/food_truck_button.png' %}" class="absolute">
+                <img id="event" src="{% static 'images/home/event_button.png' %}" class="absolute">
+            </div>
+            <div id="desk">
+                <img id="desk-img" src="{% static 'images/home/desk.png' %}" class="absolute">
+                <img id="chair" src="{% static 'images/home/chair.png' %}" class="absolute">
+                
+                <a href="{% url 'game1' %}">
+                    <img id="flat_mp3" src="{% static 'images/home/flat_mp3.png' %}" class="absolute">
+                </a>
+                <img id="books" src="{% static 'images/home/books.png' %}" class="absolute">
+                <img id="melody" src="{% static 'images/home/melody.png' %}" class="absolute">            
+            </div>
+        </div>
+        <div id="brown"></div>
+        <div id="gray"></div>
+    </body>
 </html>

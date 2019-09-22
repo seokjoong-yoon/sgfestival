@@ -18,7 +18,7 @@
         </div>
         <div id="main" style="text-align: center; margin-top:10%;">
             <table>
-                <tr>
+                <tr style="background-color: rgb(253, 242, 208)">
                     <th>순위</th>
                     <th>점수</th>
                     <th>학부</th>
@@ -26,7 +26,7 @@
 
                 {% for dpt, num in result.items %}
                     <tr>
-                        <th>{{ forloop.counter }}</th>
+                        <th style="background-color: rgb(174, 171, 171)">{{ forloop.counter }}</th>
                         <td>{{ num }}</td>
                         <td>{{ dpt }}</td>
                     </tr>

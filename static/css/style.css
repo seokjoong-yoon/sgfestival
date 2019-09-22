@@ -21,3 +21,203 @@
     padding-left: 100%;
 }
 
+@import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeepuding.woff');
+
+.pagination {
+    display: inline-block;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 3% 3.7%;
+    text-decoration: none;
+
+}
+
+.pagination a.active {
+    background-color: blue;
+    color: white;
+}
+.map{
+    text-align: center;
+    padding-left: 100%;
+}
+
+
+a {text-decoration: none;}
+
+.pagination {
+    display: inline-block;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 3% 3.7%;
+    text-decoration: none;
+
+}
+
+.pagination a.active {
+    background-color: blue;
+    color: white;
+}
+.map{
+    text-align: center;
+    padding-left: 100%;
+}
+
+@font-face { 
+    font-family: 'UhBeepuding'; 
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeepuding.woff') format('woff'); 
+    font-weight: normal; 
+    font-style: normal; 
+}
+
+img.home_button { 
+    position: relative;
+    left: 20px;
+    top: 20px;
+    width: 20%;
+  }
+
+img.foodicon {
+    position: relative;
+    width: 90%;
+    height: 80px;
+    vertical-align: bottom;
+}
+
+img.foodpic {
+    position: relative;
+    width: 100%;
+}
+
+img.foodpic {
+    position: relative;
+    width: 50%;}
+
+img.truck_map {
+    width : 330px;
+}
+
+
+p {
+    font-family: 'UhBeepuding'; 
+    margin : 0 10px;
+}
+
+body {
+    background-image: url( "../media/image/base/board_bg.png" );
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-repeat: inherit;
+    background-size: 100%;
+    height: auto;
+
+  }
+
+.container-fluid {
+    position: relative;
+    top:-40px;
+    background-image: url( "../../static/media/image/foodtruck/body2.png" );
+    background-position: top;
+    background-repeat: repeat;
+    overflow: hidden;
+    background-attachment: scroll;
+    background-size: 100%;
+    height: auto;
+}
+
+
+.title {
+    position: relative;
+    top : 5px;
+    font-size: 200%;
+    color: white;
+    text-align: center;
+
+}
+
+.foodexp {
+    text-decoration:none;
+    color: black;
+    text-align: center;
+}
+
+.foodie {
+    text-align: center;
+}
+
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(40px, auto);
+    grid-gap: 3px;
+  }
+
+.foodtruck_detail{
+    display: grid;
+    float: center;
+    grid-template-columns: 160px 100px;
+}
+
+.foodtruck_dt {
+    position: relative;
+    top : -20px;
+    left: -10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(50px, auto);
+    grid-gap: 5px;
+    padding :5px 10px 5px 10px;
+    background-image: url( "../../static/media/image/foodtruck/pinned1.png" );
+
+}
+
+.foodtruck_name {
+    padding :5px 10px 5px 10px;
+    font-weight: bold;
+}
+
+
+.form{
+    text-align: center;
+    margin: 10px 10px;
+}
+
+ul. li {
+    content: ">";
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0px 5px 6px 0px;
+}
+
+img.logo {
+    position: relative;
+    top: 14px;
+    display: block; 
+    margin: 0px auto;
+    z-index: 2; 
+    padding: 0;
+
+}
+
+.upload {
+    text-align: right;
+    
+}
+
+.foodtruck_name{
+    background-image: url("../media/image/foodtruck/highlighted.png");
+}
+
+img.review_pic {
+    height: 100px;
+    width: 100px;
+}
+
+.points{
+    list-style-type: square; 
+}

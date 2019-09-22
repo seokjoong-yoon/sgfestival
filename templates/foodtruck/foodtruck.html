@@ -1,7 +1,48 @@
-<html>
-    <h1>FOODTRUCK</h1>
-        <a href="{% url 'foodtruck:foodtruck_detail_korean' %}"><h2>한식</h2></a>
-        <a href="{% url 'foodtruck:foodtruck_detail_western' %}"><h2>양식</h2></a>
-        <a href="{% url 'foodtruck:foodtruck_detail_dessert' %}"><h2>디저트</h2></a>
-        <a href="{% url 'foodtruck:foodtruck_detail_etc' %}"><h2>기타</h2></a>
-</html>
+{% extends '../base.html' %} 
+
+
+<head>
+        <script src="./js/jquery-3.1.1.min.js"></script> 
+        <script src="./js/bootstrap.min.js"></script> 
+        <link rel="stylesheet" href="./css/bootstrap.min.css"> 
+        <link rel="stylesheet" href="./css/bootstrap-theme.min.css">
+    </head>
+<body>
+    {% block content %}
+
+<div class="title"><br><p>식단표</h1></p></div>
+
+    <img src="../static/media/image/foodtruck/magnet.png" class="logo" style="">
+
+<div class="container-fluid" style="position: relative; z-index: 1;" >
+        <br><br><br>
+        <div class="wrapper">
+            <div class="foodie">
+                <a href="{% url 'foodtruck:foodtruck_detail_western' %}"><img src="../static/media/image/foodtruck/western.png" class="foodicon">
+                <div class="foodexp"><p>양식</p></div></a>
+            </div>
+            <div class="foodie">
+                <a href="{% url 'foodtruck:foodtruck_detail_korean' %}"><img src="../static/media/image/foodtruck/korean.png" class="foodicon">
+                <div class="foodexp"><p>한식</p></div></a>
+            </div>
+            <div class="foodie">
+                <a href="{% url 'foodtruck:foodtruck_detail_dessert' %}"><img src="../static/media/image/foodtruck/dessert.png" class="foodicon">
+                <div class="foodexp"><p>디저트</p></div></a>
+            </div>
+            <div class="foodie">
+                <a href="{% url 'foodtruck:foodtruck_detail_etc' %}"><img src="../static/media/image/foodtruck/etc.png" class="foodicon">
+                    <div class="foodexp"><p>기타</p></div></a>
+            </div> 
+        </div>
+        <div class="truck_map">
+            <img src="../static/media/image/foodtruck/map_temp.png" class="truck_map">
+        </div>
+
+    </div>
+
+
+
+</body>
+
+
+    {% endblock %}

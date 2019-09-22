@@ -1,5 +1,51 @@
-<form method='post'>
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit", value='업로드'>
-</form>
+{% extends '../base2.html' %} 
+
+<head>
+</head>
+    {% block content %}
+<a href="#none"><img src="../../static/media/image/base/home_button.png" class="home_button"></a>
+
+<div class="title"><p>식단표</h1></p></div>
+<img src="../../static/media/image/foodtruck/magnet.png" class="logo">
+
+<div class="container-fluid" style="position: relative; z-index: 1;" >
+<br><br><br>
+<p class="rating">
+<ul class="points">
+    <form method="post">
+            {% csrf_token %}
+        <input type="hidden" name="csrfmiddlewaretoken" value="eaLL7aQGYqSaLSuOpoMJZg4NMYLxMGElRGvv8gaGfQg1vlXj8DAn1BqjWPTo9sT6">
+        <li><p><label for="id_ftRating">평점 선택:</label> <select name="ftRating" id="id_ftRating"> </p></li>
+        <option value="5" selected="">5점</option>
+    
+        <option value="4">4점</option>
+    
+        <option value="3">3점</option>
+    
+        <option value="2">2점</option>
+    
+        <option value="1">1점</option>
+    
+    </select>
+    <li><p><label for="id_ftCommentImage">이미지 업로드</label> <input type="file" name="ftCommentImage" accept="image/*" id="id_ftCommentImage"></p></li>
+    <li><p><label for="id_ftComment">한마디 평가 : </label> <input type="text" name="ftComment" maxlength="300" class="form-control" id="id_ftComment"></p></li>
+    <li><p><label for="id_ftCommentAuthor">글쓴이 : </label> <input type="text" name="ftCommentAuthor" value="" maxlength="100" class="form-control" required="" id="id_ftCommentAuthor"></p></li>
+    <input type="submit" ,="" value="업로드" style="font-family: 'UhBeepuding'" class="upload">
+</ul>
+
+    </form>
+        <div id="fatkun-drop-panel">
+            <a id="fatkun-drop-panel-close-btn">×</a>
+                <div id="fatkun-drop-panel-inner">
+                    <div class="fatkun-content">
+                        <svg class="fatkun-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5892"><path d="M494.933333 782.933333c2.133333 2.133333 4.266667 4.266667 8.533334 6.4h8.533333c6.4 0 10.666667-2.133333 14.933333-6.4l2.133334-2.133333 275.2-275.2c8.533333-8.533333 8.533333-21.333333 0-29.866667-8.533333-8.533333-21.333333-8.533333-29.866667 0L533.333333 716.8V128c0-12.8-8.533333-21.333333-21.333333-21.333333s-21.333333 8.533333-21.333333 21.333333v588.8L249.6 475.733333c-8.533333-8.533333-21.333333-8.533333-29.866667 0-8.533333 8.533333-8.533333 21.333333 0 29.866667l275.2 277.333333zM853.333333 874.666667H172.8c-12.8 0-21.333333 8.533333-21.333333 21.333333s8.533333 21.333333 21.333333 21.333333H853.333333c12.8 0 21.333333-8.533333 21.333334-21.333333s-10.666667-21.333333-21.333334-21.333333z" p-id="5893"></path></svg>
+                        <div class="fatkun-title">Drag and Drop</div>
+                        <div class="fatkun-desc">The image will be downloaded</div>
+                    </div>
+                </div>
+        </div></body>
+</form></div>
+
+</div>
+
+{% endblock %}

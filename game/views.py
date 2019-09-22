@@ -73,15 +73,15 @@ def inside(request):
         return render(request, 'game/insideresult.html', {"rank":rank+1,"total":total})
     if request.method=="POST":
         count=0
-        real_ans = ['응답하라1994', '별에서온그대', '꽃보다남자', 'gee', '으르렁',
-                    '루시퍼', 'nonono', '내꺼하자', 'sohot', '차카니',
-                    '멜짱', '쿠우', '텐텐', '미니벨', '아폴로']
+                real_ans = ['응답하라1994', '별에서온그대', '꽃보다남자', '차카니',
+                    '멜짱', '쿠우', '텐텐', '미니벨', '아폴로', 'gee', '으르렁',
+                    '루시퍼', 'nonono', '내꺼하자', 'sohot', '던킨도너츠', '쇼', '석류', '신한', '뿌셔', '빠름', '빙수']
         ans_set = []
-        for i in range(1, 16):           #(1,n) 1부터 n-1까지
+        for i in range(1, 23):           #(1,n) 1부터 n-1까지
             l = str(i)
             ans_set.append(request.POST[l])
 
-        for i in range(15):
+        for i in range(22):
             tmp = ans_set[i]
             ans = ''
             for j in range(len(tmp)):

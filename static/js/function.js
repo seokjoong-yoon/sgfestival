@@ -143,8 +143,7 @@ function cir_th() {
 
     a.src = "../static/images/thur_circle.png"
     b.src = "../static/images/fri.png"
-
-    x.src = "../static/images/tt_background11.png"
+    x.src = "../static/images/bg_thur.png"
 
 }
 function cir_fri() {
@@ -155,5 +154,5 @@ function cir_fri() {
 
     a.src = "../static/images/thur.png"
     b.src = "../static/images/fri_circle.png"
-    x.src = "../static/images/tt_background22.png"
+    x.src = "../static/images/bg_fri.png"
 }

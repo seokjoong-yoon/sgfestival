@@ -40,7 +40,7 @@ def game1(request):
                         ans = ans + tmp[j]
             if ans == real_ans[i]:
                 count = count+1
-                myuser=Myuser.objects.get(username=request.user)
+        myuser=Myuser.objects.get(username=request.user)
         myuser.songscore = count
         myuser.song_done = True
         myuser.save()

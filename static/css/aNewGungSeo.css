@@ -1,0 +1,13 @@
+/* 출처 - https://m.blog.naver.com/PostView.nhn?blogId=charming_br&logNo=40206226625&proxyReferer=https%3A%2F%2Fwww.google.com%2F */
+
+@font-face{
+    font-family: aNewGungSeo;
+    src: url("/static/font/a뉴궁서M.ttf") format("truetype");
+    font-weight: normal;
+}
+
+@font-face{
+    font-family: aNewGungSeo;
+    src: url("/static/font/a뉴궁서B.ttf") format("truetype");
+    font-weight: bold;
+}

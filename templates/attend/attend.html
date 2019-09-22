@@ -1,5 +1,6 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/attend.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/aNewGungSeo.css' %}">
 <script language="javaScript">
     function check(){
         var f = document.getElementById('checkform');
@@ -19,7 +20,7 @@
     <table>
         <tr>
         <th class="backslash">이름<div>날짜</div></th>
-        <th>{{ user.username }}</th>
+        <th style="font-size: 40pt;">{{ user.username }}</th>
         </tr>
         <tr>
             {% if today == 1 %}

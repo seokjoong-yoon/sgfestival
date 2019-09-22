@@ -1,5 +1,6 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/song.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
 <script type="text/javascript">
     var num = 0;
     var imgArray = [
@@ -15,19 +16,25 @@
         var q = document.getElementById('question');
         var btn = document.getElementById('button');
         var game = document.getElementById('game01');
+        var gamefield = document.getElementById('gamefield');
         var ans = document.getElementById('answerinput');
 //        game.src = "{% static 'images/song/mp3_bubble.png' %}";
-        q.innerHTML='[유의사항]'+'<br><br>'+'1. 해당 퀴즈는 단 한번만 응시 가능합니다.'+'<hr>'+
+        gamefield.removeChild(q);
+        var warning = document.createElement("textarea");
+        warning.setAttribute("id", "warn" );
+        gamefield.appendChild(warning);                
+        warning.innerHTML="[유의사항]&#10;&#10;1. 해당 퀴즈는 단 한번만 응시 가능합니다.&#10;2. 정답은 음원사이트에 등재된 제목 그대로 작성하세요.&#10; 2-1. 모든 특수문자는 제외하고 써주세요. &#10; 2-2. 괄호 및 그 안의 내용도 제외하고 써주세요.&#10;3. 정답의 띄어쓰기나 대소문자는 무관합니다.";
+        /*'[유의사항]'+'<br><br>'+'1. 해당 퀴즈는 단 한번만 응시 가능합니다.'+'<hr>'+
         '2. 정답은 음원사이트에 등재된 제목 그대로 작성하세요!'+'<hr>'+
         ' 3. 모든 특수문자는 제외하고 써주세요.'+'<hr>'+
         ' 4. 괄호 및 그 안의 내용도 제외하고 써주세요.'+'<hr>'+
-        '5. 정답의 띄어쓰기나 대소문자는 무관합니다.';
+        '5. 정답의 띄어쓰기나 대소문자는 무관합니다.';*/
         btn.src = "{% static 'images/song/next.png' %}";
       //  document.getElementById('answerinput').style.backgroundColor="white";
         btn.onclick = function(){ next(); };
     }
     function next(){
-        var q = document.getElementById('question');
+        var w = document.getElementById('warn');
         var r = document.getElementById('record');
         var btn = document.getElementById('button');
         var ans = document.getElementById('answerinput');
@@ -35,7 +42,7 @@
         if(num<20){
             if(num==0){
                 num++;
-                gamefield.removeChild(q);
+                gamefield.removeChild(w);
                 document.getElementById('answerinput').style.backgroundColor="white";
                 var gameimg = document.createElement("img");
                 gameimg.setAttribute("id", "qimg");
@@ -95,7 +102,7 @@
         </div>
        <div id=gamefield>
            <img id = "game01" src="{% static 'images/song/mp3_nobubble.png' %}">
-           <p id = "question">[이모티콘 음악 퀴즈 안내]<br><br>
+           <p id = "question">   [이모티콘 음악 퀴즈 안내]<br><br>
             본 음악 퀴즈의 문제는 2005년~2015년 사이에 발매된 추억의 노래들의 가사/안무를 이모티콘으로 표현한 것입니다.
             다음 페이지의 주의사항에 유의하여, 해당하는 노래의 제목을 적어주세요.</p> 
            <form method="POST" action="{% url 'game1' %}" name="gameform">

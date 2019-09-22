@@ -16,6 +16,10 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
 STATIC_DIR = os.path.join(BASE_DIR, "static")
+<<<<<<< HEAD
+=======
+
+>>>>>>> b7ed6096dbf118787f0cd3667c2b7f280112501c
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -125,6 +129,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     STATIC_DIR,
 ]
+<<<<<<< HEAD
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -132,3 +137,5 @@ MEDIA_URL = '/media/'
 
 #customuser
 AUTH_USER_MODEL = 'accounts.Myuser'
+=======
+>>>>>>> b7ed6096dbf118787f0cd3667c2b7f280112501c

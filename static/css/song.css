@@ -3,6 +3,27 @@
     height: 100%;
     width: 100%;
 }
+#homebuttondiv{
+    width: 15%;
+    height: 5%;
+    position: relative;
+}
+#homebuttonimg{
+    width: 100%;
+    height: 100%;
+}
+#rankbuttondiv{
+    top: 5%;
+    left: 65%;
+    width:30%;
+    height:5%;
+    position: absolute;
+    z-index: 2;
+}
+#rankbuttonimg{
+    width: 100%;
+    height: 100%;
+}
 #gamefield{
     padding-top: 10%;
     padding-left: 6%;
@@ -13,11 +34,21 @@
     width: 900px;
 }
 #question{
-    font-size: 50pt;
+    font-size: 30pt;
     position: absolute;
-    top:30%;
-    left:35%;
+    top:15%;
+    left:20%;
+    z-index: 1;
+    text-align: center;
+    width:60%;
+}
+
+#qimg{
+    top:20%;
+    left:20%;
     margin: auto;
+    height: 25%;
+    position: absolute;
 }
 #resultdiv{
     font-size: 28pt;
@@ -46,4 +77,27 @@
     width: 200px;
     top: 69%;
     left: 40%;
+}
+#gamefield table, td, th{
+    border: 4px solid black;
+    border-collapse: collapse;
+}
+#gamefield table{
+    width:55%;
+    position: absolute;
+    z-index: 1;
+    font-size: 30pt; 
+    top: 25%;
+    left: 22%;
+    text-align: center;
+}
+
+table tr td{
+    font-weight: bold;
+}
+th{
+    background-color: rgb(253, 242, 208);
+}
+#gamefield table tr .rank{
+    background-color: rgb(174, 171, 171);
 }

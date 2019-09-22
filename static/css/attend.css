@@ -1,0 +1,86 @@
+#background{
+    width: 100%;
+    height: 100%;
+}
+
+#headdiv{
+    top: 5%;
+    left: 30%;
+    height: 10%;
+    width: 40%;
+    position: absolute;
+}
+#headimg{
+    height: 100%;
+    width: 100%;
+}
+.backslash{
+    background: url('//cdn.zetawiki.com/png/backslash.png');
+    background-size: 100% 100%;
+    text-align: right;
+    padding: 2%;
+}
+.backslash div{
+    text-align: left;
+    padding: 2%;
+}
+table tr th{
+    border-collapse: collapse;
+    font-size: 30pt;
+    height:100px;
+    border : 5px solid #000000;
+}
+
+table tr td{
+    border-collapse: collapse;
+    font-weight: bold;
+    height: 200px;
+    border : 5px solid #000000;
+}
+.weekday{
+    background-color: rgb(227, 227, 227);
+}
+.today{
+    background-color: rgb(191, 191, 191);
+}
+#backgroundimg{
+    width: 100%;
+    height: 130%;
+    position: absolute;
+}
+table{
+    border-collapse: collapse;
+    width: 90%;
+    font-size: 40pt;
+    font-family: '궁서';
+    color: rgb(38, 38, 38);
+    top: 20%;
+    left: 5%;
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+    border : 5px solid black;
+}
+#checkedimg{
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+}
+
+#todayimg{
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+}
+#bannerdiv{
+    top: 80%;
+    left: 10%;
+    height: 15%;
+    width: 80%;
+    position: absolute;
+}
+
+#bannerimg{
+    width: 100%;
+    height: 100%;
+}

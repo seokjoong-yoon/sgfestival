@@ -1,36 +1,29 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/song.css' %}">
-<!--<h1>노래 맞추기 게임</h1>
-
-<meta charset="utf-8">
-<button type="button" onclick="location.href='{%url 'dptsongrank' %}'">학부별 랭킹</button>
-<form method="POST" action="{% url 'game1' %}">
-    {% csrf_token %}
-
-    <script language = "JavaScript">
-        for(i=1; i<=4; i++){
-            document.write("<h1>"+ i +"번"+ '<br></h1>');
-            document.write("<h1>문제는 여기" + '<br></h1>');
-            document.write("답: "+'<textarea name="' + i + '" id="' + i + '" rows="1" cols="20" style="ime-mode:auto; border:none; border-bottom:1px solid black;"></textarea>');
-            document.write('<br>');
-        }
-    </script>
-    
-    <br>
-    <button type="submit">제출하기</button>
-</form>
--->
 <script type="text/javascript">
     var num = 0;
+    var imgArray = [
+        "{% static 'images/song/questions/1.png' %}", "{% static 'images/song/questions/2.png' %}", "{% static 'images/song/questions/3.png' %}", "{% static 'images/song/questions/4.png' %}", "{% static 'images/song/questions/5.png' %}", "{% static 'images/song/questions/6.png' %}", "{% static 'images/song/questions/7.png' %}", "{% static 'images/song/questions/8.png' %}", "{% static 'images/song/questions/9.png' %}", "{% static 'images/song/questions/10.png' %}", "{% static 'images/song/questions/11.png' %}", "{% static 'images/song/questions/12.png' %}","{% static 'images/song/questions/13.png' %}","{% static 'images/song/questions/14.png' %}","{% static 'images/song/questions/15.png' %}","{% static 'images/song/questions/16.png' %}","{% static 'images/song/questions/17.png' %}","{% static 'images/song/questions/18.png' %}","{% static 'images/song/questions/19.png' %}","{% static 'images/song/questions/20.png' %}"
+    ]
+
+/*    for(var i=1 ; i<21; i++){
+        imgArray[i] = new Image();
+        imgArray[i].src = "{% static 'images/song/questions/"+i+".png' %}";
+    }*/
     var ansArray =new Array(1);
     function begin(){
         var q = document.getElementById('question');
         var btn = document.getElementById('button');
         var game = document.getElementById('game01');
-        game.src = "{% static 'images/song/mp3_bubble.png' %}";
-        q.innerHTML='연습문제';
+        var ans = document.getElementById('answerinput');
+//        game.src = "{% static 'images/song/mp3_bubble.png' %}";
+        q.innerHTML='[유의사항]'+'<br><br>'+'1. 해당 퀴즈는 단 한번만 응시 가능합니다.'+'<hr>'+
+        '2. 정답은 음원사이트에 등재된 제목 그대로 작성하세요!'+'<hr>'+
+        ' 3. 모든 특수문자는 제외하고 써주세요.'+'<hr>'+
+        ' 4. 괄호 및 그 안의 내용도 제외하고 써주세요.'+'<hr>'+
+        '5. 정답의 띄어쓰기나 대소문자는 무관합니다.';
         btn.src = "{% static 'images/song/next.png' %}";
-        document.getElementById('answerinput').style.backgroundColor="white";
+      //  document.getElementById('answerinput').style.backgroundColor="white";
         btn.onclick = function(){ next(); };
     }
     function next(){
@@ -38,25 +31,30 @@
         var r = document.getElementById('record');
         var btn = document.getElementById('button');
         var ans = document.getElementById('answerinput');
-        if(num<4){
+        var gamefield = document.getElementById('gamefield');
+        if(num<20){
             if(num==0){
                 num++;
-                q.innerHTML=num + "번 문제";         
+                gamefield.removeChild(q);
+                document.getElementById('answerinput').style.backgroundColor="white";
+                var gameimg = document.createElement("img");
+                gameimg.setAttribute("id", "qimg");
+                gameimg.setAttribute("src", imgArray[num-1]);
+                document.gameform.appendChild(gameimg);
             }
             else{
                 num++;
-                q.innerHTML=num + "번 문제";      
+                var qimg = document.getElementById("qimg");
+                qimg.src = imgArray[num-1];
                 ansArray.push(ans.value);
                 ans.value="";
             }
         }
         else{
             ansArray.push(ans.value);
-            q.innerHTML= "내 성적";
             btn.src = "{% static 'images/song/exit.png' %}";
             //document.gameform.submit(ansArray);
             post_to_url("{% url 'game1' %}", ansArray);
-            ans.value=ansArray;
             btn.onclick = function(){ location.href="{% url 'home' %}"; };
             ans.style.backgroundColor="rgb(242, 242, 242)";
         }
@@ -85,14 +83,21 @@
 
 </script>
 <div id=background>
-        <div id=homebuttondiv>
+        <div id='homebuttondiv'>
             <a href="{% url 'home' %}">
-            <img id=homebuttonimg src="{% static 'images/song/home_button2.png' %}">
+            <img id='homebuttonimg' src="{% static 'images/song/home_button2.png' %}">
+            </a>
+        </div>
+        <div id='rankbuttondiv'>
+            <a href="{% url 'dptsongrank' %}">
+                <img id="rankbuttonimg" src="{% static 'images/song/ranking.png' %}">
             </a>
         </div>
        <div id=gamefield>
            <img id = "game01" src="{% static 'images/song/mp3_nobubble.png' %}">
-           <p id = "question">처음 시작</p> 
+           <p id = "question">[이모티콘 음악 퀴즈 안내]<br><br>
+            본 음악 퀴즈의 문제는 2005년~2015년 사이에 발매된 추억의 노래들의 가사/안무를 이모티콘으로 표현한 것입니다.
+            다음 페이지의 주의사항에 유의하여, 해당하는 노래의 제목을 적어주세요.</p> 
            <form method="POST" action="{% url 'game1' %}" name="gameform">
                 {% csrf_token %}
             <input type="text" id="answerinput" style="background-color: rgb(242, 242, 242)">

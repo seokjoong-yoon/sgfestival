@@ -17,7 +17,7 @@
         <div id="main">
             
             <form method="POST" action="{% url 'inside' %}">{% csrf_token %}
-                <h2>다음 장면이 나온 드라마의 이름을 구하시오. [1~3]</h2>
+                <h2>[1-3] 다음 사진을 보고, 해당 장면이 등장한 드라마의 이름을 적으시오.</h2>
                 
                 <div class="question">
                     <h2>1.</h2>
@@ -36,7 +36,7 @@
                 </div>
 
                 
-                <h2>다음 불량식품의 이름을 구하시오. [4~9]</h2>
+                <h2>[4-9]다음 그림을보고, 추억의 식품의 이름을 적으시오.</h2>
                 <div class="question">
                     <h2>4.</h2>
                     <img src="{% static '/images/insider/questions/4.png' %}"/>
@@ -68,7 +68,7 @@
                     <textarea name="9" id="9" rows="2" cols='20' placeholder="답:"></textarea>
                 </div>
 
-                <h2>다음 그룹의 이름을 구하시오. [4~9]</h2>
+                <h2>[10-15]  다음 음악방송의 캡쳐 화면을 보고, 알맞은 곡 제목을 적으시오.</h2>
                 <div class="question">
                     <h2>10.</h2>
                     <img src="{% static '/images/insider/questions/10.jpg' %}"/>
@@ -99,7 +99,44 @@
                     <img src="{% static '/images/insider/questions/15.jpg' %}"/>
                     <textarea name="15" id="15" rows="2" cols='20' placeholder="답:"></textarea>
                 </div>
+                
+                <h2>[16-22] 다음은 광고 카피문구입니다. 빈칸을 채워주세요. (반복되는 문구는 하나만 적어주세요!)</h2>
 
+                <div class="question">
+                    <h2>16.</h2>
+                    <h2 class="phrase">커피? 도넛? □□□□□ (5글자)</h2>
+                    <textarea name="16" id="16" rows="2" cols='20' placeholder="답:"></textarea>
+                </div>
+                <div class="question">
+                    <h2>17.</h2>
+                    <h2 class="phrase">□곱하기 □는 □ (1글자)</h2>
+                    <textarea name="17" id="17" rows="2" cols='20' placeholder="답:"></textarea>
+                </div>
+                <div class="question">
+                    <h2>18.</h2>
+                    <h2 class="phrase">미녀는 □□를 좋아해~ (2글자)</h2>
+                    <textarea name="18" id="18" rows="2" cols='20' placeholder="답:"></textarea>
+                </div>
+                <div class="question">
+                    <h2>19.</h2>
+                    <h2 class="phrase">생각 생각 생각 생각 □□카드 (2글자)</h2>
+                    <textarea name="19" id="19" rows="2" cols='20' placeholder="답:"></textarea>
+                </div>
+                <div class="question">
+                    <h2>20.</h2>
+                    <h2 class="phrase">니킥□□ □□ □□, 팝핀 팝핀 스텀프 웨이브 웨이브 □□ □□ 크럼프 크럼프 □□ □□ 온몸으로 □□ □□ 샤이니처럼 □□ □□ (2글자)</h2>
+                    <textarea name="20" id="20" rows="2" cols='20' placeholder="답:"></textarea>
+                </div>
+                <div class="question">
+                    <h2>21.</h2>
+                    <h2 class="phrase">□□, □□, □□ LTE 워프, 올레! (2글자)</h2>
+                    <textarea name="21" id="21" rows="2" cols='20' placeholder="답:"></textarea>
+                </div>
+                <div class="question">
+                    <h2>22.</h2>
+                    <h2 class="phrase">□□~, 떡□□, 콩떡□□ (2글자)</h2>
+                    <textarea name="22" id="22" rows="2" cols='20' placeholder="답:"></textarea>
+                </div>
                 
 
                 <button type="submit">제출하기</button>

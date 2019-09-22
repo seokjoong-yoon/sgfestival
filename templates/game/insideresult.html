@@ -1,20 +1,45 @@
-<div id="rank"></div>
-<button type="button" onclick="location.href='{%url 'dptinsiderank' %}'">학부별 랭킹</button>
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static '/css/chosun_ilbo_myungjo.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static '/css/insider.css' %}">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+        $.ajax({
+            type:"GET",
+            url: "insiderank/",
+            contentType: "json",
+            success: function(context){
+                $("#rank").text("순위 : 　　　　　　　"+context['rank']+"등 / "+context['total']+"명");
+            },
+            error: function(response){
+                alert('fail');
+            }
+        })
+        </script>
+    </head>
+    
+    <body>
+        <div id="home">
+            <a href="{% url 'home' %}">
+                <input type="image" id="home-img" src="{% static '/images/insider/home_button3.png' %}">
+            </a>
+        </div>
+        <div id="header">
+            <img id="header-img" src="{% static '/images/insider/test.png' %}"/>
+        </div>
+        <div id="main" style="text-align: center; margin-top:10%;">
+            <h2>
+                점수 : 　　　　　　　{{user.insidescore}} / 22 점
+            </h2>
+            <h2 id=rank>
 
+            </h2>
+            <button type="button" onclick="location.href='{%url 'dptinsiderank' %}'">학부별 랭킹</button>
+        </div>
+    </body>
 
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-$.ajax({
-    type:"GET",
-    url: "insiderank/",
-    contentType: "json",
-    success: function(context){
-        alert("success");
-        $("#rank").text(context['rank']+"/"+context['total']);
-    },
-    error: function(response){
-        alert('fail');
-    }
-})
-</script>
+</html>

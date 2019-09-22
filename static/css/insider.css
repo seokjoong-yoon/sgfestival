@@ -60,3 +60,27 @@ button{
 #main{
     margin : 5%;
 }
+
+table{
+    font-size:24px;
+    border-collapse: collapse;
+    width : 100%;
+}
+
+td{
+    border:2px solid black;
+    margin:5%;
+    padding:5%;
+}
+
+tr{
+    border:2px solid black;
+    margin:5%;
+    padding:5%;
+}
+
+th{
+    border:2px solid black;
+    margin:5%;
+    padding:5%;
+}

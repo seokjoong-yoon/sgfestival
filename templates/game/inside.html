@@ -9,7 +9,9 @@
     
     <body>
         <div id="home">
-            <input type="image" id="home-img" src="{% static '/images/insider/home_button3.png' %}">
+            <a href="{% url 'home' %}">
+                <input type="image" id="home-img" src="{% static '/images/insider/home_button3.png' %}">
+            </a>
         </div>
         <div id="header">
             <img id="header-img" src="{% static '/images/insider/test.png' %}"/>
@@ -143,6 +145,7 @@
             </form>
             <button type="button" onclick="location.href='{%url 'dptinsiderank' %}'">학부별 랭킹</button>
         </div>
+        <img src="{% static 'images/insider/omr_card.png' %}" style="width: 100%;">
     </body>
 
 </html>

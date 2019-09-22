@@ -26,7 +26,7 @@
             min-height: 100%;
             background-position: center;
             background-size: cover;
-            background-attachment: scroll
+            background-attachment: fixed;
         }
         @font-face { font-family: 'UhBeepuding'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeepuding.woff') format('woff'); font-weight: normal; font-style: normal; }
         #line{
@@ -48,7 +48,7 @@
 
         #where_grid { grid-area: where_grid; }
 
-        #what_grid { grid-area: what_grid; }
+        #what_grid { grid-area: what_grid; color : rgb(220, 174, 60);}
 
     </style>
 </head>
@@ -61,8 +61,8 @@
         </div>
         <div id="day">
             <div id="pagination" >
-                <a href="#"><img id=mon src="{% static "images/mon_white.png" %}" style="padding-left: 5%; padding-top: 5%;" onclick="func()"/></a>
-                <a href="#"><img id=tue src="{% static "images/tue_white.png" %}" style="padding-left: 5%; padding-top: 5%;" onclick="tue()"/></a>
+                <a href="#"><img id=mon src="{% static "images/mon_white.png" %}" style="padding-left: 5%; padding-top: 5%;" /></a>
+                <a href="#"><img id=tue src="{% static "images/tue_yellow.png" %}" style="padding-left: 5%; padding-top: 5%;" onclick="tue()"/></a>
                 <a href="#"><img id=wed src="{% static "images/wed_white.png" %}" style="padding-left: 5%; padding-top: 5%;" onclick="wed()"/></a>
                 <a href="#"><img id=thur src="{% static "images/thur_white.png" %}" style="padding-left: 5%; padding-top: 5%;" onclick="thur()"/></a>
                 <a href="#"><img id=fri src="{% static "images/fri_white.png" %}" style="padding-left: 5%; padding-top: 5%;" onclick="fri()"/></a>
@@ -75,7 +75,7 @@
         </div>
         <div id=line>
             <!-- 탬플릿태그 하려면 for 문 안에서 {{sch.모델필드}} 형식으로 하면 됨 -->
-            <div id='monday' style="display: block">
+            <div id='monday' style="display: none">
                     {% for sch in post_list %}
                         {% if sch.eventDay == '1' %}
                         <a href="{% url 'schedule:schedule_detail' index=sch.pk %}">{{ sch.when }}{{ sch.where }}{{ sch.what }}</a>
@@ -84,7 +84,7 @@
                         {% endif %}
                     {% endfor %}
                 </div>
-                <div id='tuesday' style="display: none">
+                <div id='tuesday' style="display: block">
                     {% for sch in post_list %}
                         {% if sch.eventDay == '2' %}
                         <a href="{% url 'schedule:schedule_detail' index=sch.pk %}"style="color:white;">

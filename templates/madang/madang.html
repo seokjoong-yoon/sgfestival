@@ -1,4 +1,3 @@
-
 {% load static %}
 
 <!DOCTYPE html>
@@ -27,6 +26,16 @@
             min-height: 100%;
             background-position: center;
             background-size: cover;
+            background-attachment: fixed;
+        }
+        @font-face { font-family: 'UhBeepuding'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeepuding.woff') format('woff'); font-weight: normal; font-style: normal; }
+        #content{
+            font-family: UhBeepuding;
+            font-size:20px;
+        }
+        #day_box{
+            background-image: url('{% static "images/box.png" %}');
+
         }
     </style>
 </head>
@@ -39,8 +48,8 @@
         </div>
         <div id="day">
             <div id="pagination" >
-                <a href="#"><img id=mon src="{% static "images/mon_white.png" %}" style="padding-left: 5%; padding-top: 5%;" onclick="func()"/></a>
-                <a href="#"><img id=tue src="{% static "images/tue_white.png" %}" style="padding-left: 5%; padding-top: 5%;" onclick="tue()"/></a>
+                <a href="#"><img id=mon src="{% static "images/mon_white.png" %}" style="padding-left: 5%; padding-top: 5%;" /></a>
+                <a href="#"><img id=tue src="{% static "images/tue_yellow.png" %}" style="padding-left: 5%; padding-top: 5%;" onclick="tue()"/></a>
                 <a href="#"><img id=wed src="{% static "images/wed_white.png" %}" style="padding-left: 5%; padding-top: 5%;" onclick="wed()"/></a>
                 <a href="#"><img id=thur src="{% static "images/thur_white.png" %}" style="padding-left: 5%; padding-top: 5%;" onclick="thur()"/></a>
                 <a href="#"><img id=fri src="{% static "images/fri_white.png" %}" style="padding-left: 5%; padding-top: 5%;" onclick="fri()"/></a>
@@ -51,48 +60,50 @@
         </div>
     </div>
 
-    
-    <div id = 'monday' style="display: block">
-        {% for madang in madang %} 
-            {% if madang.category == '1' %}
-                <a href="{% url 'madang_detail' pk=madang.pk %}"><img src="{% static "images/box.png" %}" style="width:100%" />{{madang.title}}</a>
-                <hr>
-            {%endif%}
-        {% endfor %}
+    <div id = content  style= "text-align: center;">
+            <div id = 'monday' style="display: none">
+                    {% for madang in madang %} 
+                        {% if madang.category == '1' %}
+                                    <a href="{% url 'madang_detail' pk=madang.pk %}"><img src="{% static "images/box.png" %}" style="width:100%" />{{madang.title}}</a>
+                                    <hr>
+                        {%endif%}
+                    {% endfor %}
+                </div>
+                <div id = 'tuesday' style="display: block;">
+                    {% for madang in madang %} 
+                        {% if madang.category == '2' %}
+                        <div id=day_box>
+                            <a href="{% url 'madang_detail' pk=madang.pk %}" style="color:white;">{{madang.title}}</a>
+                            <hr>
+                        </div>
+                        {%endif%}
+                    {% endfor %}
+                </div>
+                <div id = 'wednesday' style="display: none;">
+                    {% for madang in madang %} 
+                        {% if madang.category == '3' %}
+                        <!--<img src="{% static "images/box.png" %}" style="width:100%;" />-->
+                        <a href="{% url 'madang_detail' pk=madang.pk %}" style="color:white;")">{{madang.title}}</a>
+                            <hr>
+                        {%endif%}
+                    {% endfor %}
+                </div>
+                <div id = 'thursday' style="display: none">
+                    {% for madang in madang %} 
+                        {% if madang.category == '4' %}
+                            <a href="{% url 'madang_detail' pk=madang.pk %}" style="color:white;">{{madang.title}}</a>
+                            <hr>
+                        {%endif%}
+                    {% endfor %}
+                </div>
+                <div id = 'friday' style="display: none">
+                    {% for madang in madang %} 
+                        {% if madang.category == '5' %}
+                            <a href="{% url 'madang_detail' pk=madang.pk %}" style="color:white;">{{madang.title}}</a>
+                            <hr>
+                        {%endif%}
+                    {% endfor %}
+                </div>
     </div>
-    <div id = 'tuesday' style="display: none">
-        {% for madang in madang %} 
-            {% if madang.category == '2' %}
-                <a href="{% url 'madang_detail' pk=madang.pk %}">{{madang.title}}</a>
-                <hr>
-            {%endif%}
-        {% endfor %}
-    </div>
-    <div id = 'wednesday' style="display: none">
-        {% for madang in madang %} 
-            {% if madang.category == '3' %}
-                <a href="{% url 'madang_detail' pk=madang.pk %}">{{madang.title}}</a>
-                <hr>
-            {%endif%}
-        {% endfor %}
-    </div>
-    <div id = 'thursday' style="display: none">
-        {% for madang in madang %} 
-            {% if madang.category == '4' %}
-                <a href="{% url 'madang_detail' pk=madang.pk %}">{{madang.title}}</a>
-                <hr>
-            {%endif%}
-        {% endfor %}
-    </div>
-    <div id = 'friday' style="display: none">
-        {% for madang in madang %} 
-            {% if madang.category == '5' %}
-                <a href="{% url 'madang_detail' pk=madang.pk %}">{{madang.title}}</a>
-                <hr>
-            {%endif%}
-        {% endfor %}
-    </div>
-    
-    
 </body>
 

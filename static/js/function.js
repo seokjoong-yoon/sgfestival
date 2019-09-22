@@ -35,6 +35,9 @@ function tue() {
     var thur_dis = document.getElementById('thursday')
     var fri_dis = document.getElementById('friday')
 
+    //var z=document.getElementById('map')
+    //z.src="../static/images/tue_map.png"
+
     x.src = "../static/images/tue_yellow.png"
     a.src = "../static/images/mon_white.png"
     b.src = "../static/images/wed_white.png"
@@ -59,6 +62,9 @@ function wed() {
     var wed_dis = document.getElementById('wednesday')
     var thur_dis = document.getElementById('thursday')
     var fri_dis = document.getElementById('friday')
+
+    //var z=document.getElementById('map')
+    //z.src="../static/images/wed_map.png"
 
     x.src = "../static/images/wed_yellow.png"
     a.src = "../static/images/mon_white.png"
@@ -85,6 +91,9 @@ function thur() {
     var thur_dis = document.getElementById('thursday')
     var fri_dis = document.getElementById('friday')
 
+    //var z=document.getElementById('map')
+    //z.src="../static/images/thur_map.png"
+
     x.src = "../static/images/thur_yellow.png"
     a.src = "../static/images/mon_white.png"
     b.src = "../static/images/tue_white.png"
@@ -110,6 +119,9 @@ function fri() {
     var thur_dis = document.getElementById('thursday')
     var fri_dis = document.getElementById('friday')
 
+    //var z=document.getElementById('map')
+    //z.src="../static/images/fri_map.png"
+
     x.src = "../static/images/fri_yellow.png"
     a.src = "../static/images/mon_white.png"
     b.src = "../static/images/tue_white.png"
@@ -127,21 +139,21 @@ function cir_th() {
 
     var a = document.getElementById('cir_thur')
     var b = document.getElementById('cir_fri')
-    //var x = document.getElementById('bg_thur')
+    var x = document.getElementById('bg_thur')
 
     a.src = "../static/images/thur_circle.png"
     b.src = "../static/images/fri.png"
 
-    //x.src = "../static/images/bg_thur.png"
+    x.src = "../static/images/tt_background11.png"
 
 }
 function cir_fri() {
 
     var a = document.getElementById('cir_thur')
     var b = document.getElementById('cir_fri')
-    //var x = document.getElementById('bg_thur')
+    var x = document.getElementById('bg_thur')
 
     a.src = "../static/images/thur.png"
     b.src = "../static/images/fri_circle.png"
-    //x.src = "../static/images/bg_fri.png"
+    x.src = "../static/images/tt_background22.png"
 }

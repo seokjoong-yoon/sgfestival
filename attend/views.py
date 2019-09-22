@@ -38,9 +38,9 @@ def attend(request):
         att.append(fri)
         att.append(sat)
         att.append(sun)
-
+        today = now.tm_wday 
         myuser.save()
-        return render(request, 'attend/attend.html', {'tue':int(att[0]), 'wed':int(att[1]), 'thur':int(att[2]), 'fri':int(att[3]), 'sat':int(att[4]), 'sun':int(att[5])})
+        return render(request, 'attend/attend.html', { 'today':today, 'tue':int(att[0]), 'wed':int(att[1]), 'thur':int(att[2]), 'fri':int(att[3]), 'sat':int(att[4]), 'sun':int(att[5])})
     else:
         now=time.localtime()
         myuser=Myuser.objects.get(username=request.user)
@@ -77,5 +77,6 @@ def attend(request):
             elif i==now.tm_wday:
                 if att[i-1]==0:
                     att[i-1]=2
+        today = now.tm_wday            
         myuser.save()
-        return render(request, 'attend/attend.html', {'tue':int(att[0]), 'wed':int(att[1]), 'thur':int(att[2]), 'fri':int(att[3]), 'sat':int(att[4]), 'sun':int(att[5])})
+        return render(request, 'attend/attend.html', {'today':today, 'tue':int(att[0]), 'wed':int(att[1]), 'thur':int(att[2]), 'fri':int(att[3]), 'sat':int(att[4]), 'sun':int(att[5])})

@@ -1,129 +1,92 @@
-<table border="1">
-        <th>날짜/이름</th>
-        <th>출석</th>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/attend.css' %}">
+<script language="javaScript">
+    function check(){
+        var f = document.getElementById('checkform');
+        var hiddenField = document.createElement("input");
+        hiddenField.setAttribute("type", "hidden");
+        hiddenField.setAttribute("name", "csrfmiddlewaretoken");
+        hiddenField.setAttribute("value", "{{csrf_token}}");
+        f.appendChild(hiddenField);
+        f.submit();
+    }
+</script>
+<div id = "background">
+    <img id="backgroundimg" src="{% static 'images/attend/background.jpg' %}">
+    <div id = "headdiv">
+        <img id="headimg" src="{% static 'images/attend/head.png' %}">
+    </div>
+    <table>
         <tr>
-            <td>9월 24일(화)</td>
+        <th class="backslash">이름<div>날짜</div></th>
+        <th>{{ user.username }}</th>
+        </tr>
+        <tr>
+            {% if today == 1 %}
+            <td class = "today">9월 24일<br>(화)</td>
+            {% else %}
+            <td class = "weekday">9월 24일<br>(화)</td>
+            {% endif %}
             <td>
-                <script>
-                    a={{tue}}
-                    if(a==1){
-                        document.write('출첵 완료!');
-                    }
-                    else if(a==-1){
-                        document.write('날짜 지나감');
-                    }
-                    else if(a==2){
-                        document.write('오늘인데 아직 안함');
-                    }
-                    else if(a==0){
-                        document.write('아직 멀었음')
-                    }
-                </script>
-                
+                {% if tue == 1 %}
+                <img id = "checkedimg" src = "{% static 'images/attend/checked.png' %}">
+                {% elif tue == 2 %}
+                <form action="{% url 'attend' %}" method="POST" id = "checkform">
+                    <img id = "todayimg" src ="{% static 'images/attend/today.png' %}" onclick="check();">
+                </form>
+                {% endif %}     
             </td>
         </tr>
         <tr>
-            <td>9월 25일(수)</td>
+            {% if today == 2 %}
+            <td class = "today">9월 25일<br>(수)</td>
+            {% else %}
+            <td class = "weekday">9월 25일<br>(수)</td>
+            {% endif %}
             <td>
-                <script>
-                    a={{wed}}                    
-                    if(a==1){
-                        document.write('출첵 완료!');
-                    }
-                    else if(a==-1){
-                        document.write('날짜 지나감');
-                    }
-                    else if(a==2){
-                        document.write('오늘인데 아직 안함');
-                    }
-                    else if(a==0){
-                        document.write('아직 멀었음')
-                    }
-                </script>
+                {% if wed == 1 %}
+                <img id = "checkedimg" src = "{% static 'images/attend/checked.png' %}">
+                {% elif wed == 2 %}
+                <form action="{% url 'attend' %}" method="POST" id = "checkform">
+                    <img id = "todayimg" src ="{% static 'images/attend/today.png' %}" onclick="check();">
+                </form>
+                {% endif %}     
             </td>
         </tr>
         <tr>
-            <td>9월 26일(목)</td>
+            {% if today == 3 %}
+            <td class = "today">9월 26일<br>(목)</td>
+            {% else %}
+            <td class = "weekday">9월 26일<br>(목)</td>
+            {% endif %}
             <td>
-                <script>
-                    a={{thur}}
-                    if(a==1){
-                        document.write('출첵 완료!');
-                    }
-                    else if(a==-1){
-                        document.write('날짜 지나감');
-                    }
-                    else if(a==2){
-                        document.write('오늘인데 아직 안함');
-                    }
-                    else if(a==0){
-                        document.write('아직 멀었음')
-                    }
-                </script>
+                {% if thur == 1 %}
+                <img id = "checkedimg" src = "{% static 'images/attend/checked.png' %}">
+                {% elif thur == 2 %}
+                <form action="{% url 'attend' %}" method="POST" id = "checkform">
+                    <img id = "todayimg" src ="{% static 'images/attend/today.png' %}" onclick="check();">
+                </form>
+                {% endif %}         
             </td>
         </tr>
         <tr>
-            <td>9월 27일(금)</td>
+            {% if today == 4 %}
+            <td class = "today">9월 27일<br>(금)</td>
+            {% else %}
+            <td class = "weekday">9월 27일<br>(금)</td>
+            {% endif %}
             <td>
-                <script>
-                    a={{fri}}
-                    if(a==1){
-                        document.write('출첵 완료!');
-                    }
-                    else if(a==-1){
-                        document.write('날짜 지나감');
-                    }
-                    else if(a==2){
-                        document.write('오늘인데 아직 안함');
-                    }
-                    else if(a==0){
-                        document.write('아직 멀었음')
-                    }
-                </script>
+                {% if fri == 1 %}
+                <img id = "checkedimg" src = "{% static 'images/attend/checked.png' %}">
+                {% elif fri == 2 %}
+                <form action="{% url 'attend' %}" method="POST" id = "checkform">
+                    <img id = "todayimg" src ="{% static 'images/attend/today.png' %}" onclick="check();">
+                </form>
+                {% endif %}         
             </td>
         </tr>
-        <tr>
-            <td>9월 21일(토)</td>
-            <td>
-                <script>
-                    a={{sat}}
-                    if(a==1){
-                        document.write('출첵 완료!');
-                    }
-                    else if(a==-1){
-                        document.write('날짜 지나감');
-                    }
-                    else if(a==2){
-                        document.write('오늘인데 아직 안함');
-                        document.write('<form method="POST" action="{% url "attend" %}">')
-                        document.write('{% csrf_token %}')
-                        document.write('<button type="submit">출첵!</button>')
-                        document.write('</form>')
-                    }
-                    else if(a==0){
-                        document.write('아직 멀었음')
-                    }
-                </script>
-            </td>
-        </tr>
-        <tr>
-            <td>9월 22일(일)</td>
-            <td>
-                <script>
-                    a={{sun}}
-                    if(a==1){
-                        document.write('출첵 완료!');
-                    }
-                    else if(a==-1){
-                        document.write('날짜 지나감');
-                    }
-                    else if(a==2){
-                        document.write('오늘인데 아직 안함');
-                    }
-                    else if(a==0){
-                        document.write('아직 멀었음')
-                    }
-                </script>                
-            </td>
-        </tr>
-</table>
+    </table>
+    <div id="bannerdiv">
+        <img id = "bannerimg" src = "{% static 'images/attend/banner.png' %}">
+    </div>
+</div>

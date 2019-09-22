@@ -40,6 +40,10 @@ def game1(request):
                         ans = ans + tmp[j]
             if ans == real_ans[i]:
                 count = count+1
+                myuser=Myuser.objects.get(username=request.user)
+        myuser.songscore = count
+        myuser.song_done = True
+        myuser.save()
         return render(request, 'game/songresult.html', {"count":count})
     else:
         return render(request, 'game/song.html')

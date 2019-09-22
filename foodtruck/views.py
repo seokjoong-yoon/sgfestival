@@ -18,7 +18,7 @@ def foodtruck_detail_korean(request):
 def foodtruck_review_korean(request, index):
     this_foodtruck = get_object_or_404(Foodtruck, pk=index)
     if request.method == 'POST':
-        form = FoodtruckCommentForm(request.POST)
+        form = FoodtruckCommentForm(request.POST, request.FILES)        
         if form.is_valid():
             comment = form.save(commit=False)
             comment.foodtruck = this_foodtruck
@@ -46,7 +46,7 @@ def foodtruck_detail_western(request):
 def foodtruck_review_western(request, index):
     this_foodtruck = get_object_or_404(Foodtruck, pk=index)
     if request.method == 'POST':
-        form = FoodtruckCommentForm(request.POST)
+        form = FoodtruckCommentForm(request.POST, request.FILES)        
         if form.is_valid():
             comment = form.save(commit=False)
             comment.foodtruck = this_foodtruck
@@ -73,7 +73,7 @@ def foodtruck_detail_dessert(request):
 def foodtruck_review_dessert(request, index):
     this_foodtruck = get_object_or_404(Foodtruck, pk=index)
     if request.method == 'POST':
-        form = FoodtruckCommentForm(request.POST)
+        form = FoodtruckCommentForm(request.POST, request.FILES)        
         if form.is_valid():
             comment = form.save(commit=False)
             comment.foodtruck = this_foodtruck
@@ -100,7 +100,7 @@ def foodtruck_detail_etc(request):
 def foodtruck_review_etc(request, index):
     this_foodtruck = get_object_or_404(Foodtruck, pk=index)
     if request.method == 'POST':
-        form = FoodtruckCommentForm(request.POST)
+        form = FoodtruckCommentForm(request.POST, request.FILES)        
         if form.is_valid():
             comment = form.save(commit=False)
             comment.foodtruck = this_foodtruck

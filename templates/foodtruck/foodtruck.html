@@ -10,13 +10,19 @@
 <body>
     {% block content %}
 
-<div class="title"><br><p>식단표</h1></p></div>
+<div class="title"><br><p>서강고 주간 식단표</h1></p></div>
 
     <img src="../static/media/image/foodtruck/magnet.png" class="logo" style="">
 
 <div class="container-fluid" style="position: relative; z-index: 1;" >
-        <br><br><br>
-        <div class="wrapper">
+        <br><br><br><br>
+
+        <div class="highligted">
+        <p style="font-size: 25px; text-align:center; font-weight: bold;"> > 오늘의 메뉴 < </p>
+        </div>
+
+        <div class="food_cate"><br><br>
+            <div class="wrapper">
             <div class="foodie">
                 <a href="{% url 'foodtruck:foodtruck_detail_western' %}"><img src="../static/media/image/foodtruck/western.png" class="foodicon">
                 <div class="foodexp"><p>양식</p></div></a>
@@ -33,7 +39,13 @@
                 <a href="{% url 'foodtruck:foodtruck_detail_etc' %}"><img src="../static/media/image/foodtruck/etc.png" class="foodicon">
                     <div class="foodexp"><p>기타</p></div></a>
             </div> 
+            <br>
+            </div>
         </div>
+<br>
+        <div class="highligted">
+                <p style="font-size: 25px; text-align:center; font-weight: bold;"> > 급식실 위치 < </p>
+                </div>
         <div class="truck_map">
             <img src="../static/media/image/foodtruck/map_temp.png" class="truck_map">
         </div>

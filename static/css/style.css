@@ -89,7 +89,9 @@ img.foodicon {
     vertical-align: bottom;
 }
 
-img.foodpic {
+img.foodpics {
+    box-sizing: border-box;
+    border-radius: 100px 70px / 70px 100px ;
     position: relative;
     width: 100%;
 }
@@ -100,6 +102,8 @@ img.foodpic {
 
 img.truck_map {
     width : 330px;
+    display: block; 
+    margin: 0px auto;
 }
 
 
@@ -133,10 +137,10 @@ body {
 
 .title {
     position: relative;
-    top : 5px;
     font-size: 200%;
     color: white;
     text-align: center;
+    padding: 0px;
 
 }
 
@@ -150,11 +154,21 @@ body {
     text-align: center;
 }
 
+.food_cate{
+    background-image: url("../media/image/foodtruck/cloud.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: visible;
+}
+
 .wrapper{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: minmax(40px, auto);
     grid-gap: 3px;
+
+
   }
 
 .foodtruck_detail{
@@ -166,14 +180,15 @@ body {
 .foodtruck_dt {
     position: relative;
     top : -20px;
-    left: -10px;
+    
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: minmax(50px, auto);
     grid-gap: 5px;
+    margin:auto;
     padding :5px 10px 5px 10px;
     background-image: url( "../../static/media/image/foodtruck/pinned1.png" );
-
+    background-repeat: no-repeat;
 }
 
 .foodtruck_name {
@@ -181,6 +196,9 @@ body {
     font-weight: bold;
 }
 
+.foodmenus {
+    font-size:90%;
+}
 
 .form{
     text-align: center;
@@ -204,20 +222,110 @@ img.logo {
 
 }
 
+.review {
+    background-image: url("../media/image/foodtruck/pencil_trail.png");
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: right;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-auto-rows: minmax(40px, auto);
+    grid-gap: 3px;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+
+.foodreview {
+    background-image: url("../media/image/foodtruck/highlighted.png");
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .upload {
     text-align: right;
     
 }
 
-.foodtruck_name{
-    background-image: url("../media/image/foodtruck/highlighted.png");
-}
 
 img.review_pic {
-    height: 100px;
-    width: 100px;
+    box-sizing: border-box;
+    border-radius: 20px 80px / 80px 20px;
+    height: 90px;
+    width: 90px;
+    display: block; margin: 0px auto;
+    
 }
 
 .points{
     list-style-type: square; 
+}
+
+input[type=text], select {
+width: 100%; 
+    /*입력 칸 (input field) 의 폭을 지정하기 위해, 폭 속성 (width property) 를 사용하였습니다.*/ 
+padding: 12px 20px; 
+margin: 8px 0; 
+display: inline-block; 
+border: 1px solid #ccc; 
+border-radius: 4px; 
+box-sizing: border-box; } 
+/* input 태그 중에서 특정 타입에만 스타일을 적용하려면, 아래와 같이 속성 선택자 (attribute selectors) 를 사용할 수 있습니다. input[type=text] {} 텍스트를 입력받는 input 태그에 스타일을 지정합니다. input[type=password] {} 비밀번호 (password) 를 입력받는 input 태그에 스타일을 지정합니다. input[type=number] {} 숫자를 입력받는 input 태그에 스타일을 지정합니다. */ 
+/* 박스-크기 속성 (box-sizing property) 에 대해 속성값을 테두리-박스 (border-box) 로 지정하였습니다. 이렇게 하면 박스의 전체 크기는, 패딩과 테두리를 포함한 폭과, 높이를 갖게 됩니다. (기본적으로 테두리는 패딩을 포함하고, 마진은 제외하므로, box-sizing: border-box; 속성은 없어도 동일한 스타일로 보일 것입니다). */ 
+
+input[type=submit] { 
+    font-family: 'UhBeepuding'; 
+    position: relative;
+    left: 100px;
+    width: 80px; 
+    height: 60px;
+    text-align: center;
+    font-size: 20px;
+    background-color: rgba(255, 68, 0, 0.767); color: white; 
+    padding: 14px 20px; 
+    margin: 8px 0; 
+    border: none;
+    border-radius: 40px 80px/ 80px 40px; 
+    cursor: pointer; 
+} /* 텍스트 필드 안쪽에 패딩 과 마진을 주었습니다. 배경-색상 속성 (background-color property) 으로 입력 버튼의 배경 색을 지정하였습니다. 그리고 색상 속성 (color property) 으로 글자 색을 지정합니다. */ 
+
+input[type=submit]:hover { 
+    font-family: 'UhBeepuding'; 
+    width: 80px;
+    background-color: rgba(255, 68, 0, 0.767); 
+} 
+
+select {
+    font-family: 'UhBeepuding'; 
+    width : 80px;
+    padding: 2px;
+    font-size: 13px;
+}
+
+input[type=text]:focus { 
+    font-family: 'UhBeepuding'; 
+    width: 205px;
+    height: 20px;
+    background-color: rgb(197, 215, 221); 
+    border: 3px solid #555; 
+    display: block; margin: 0px auto;
+} /* 포커스 인풋 (Focused Inputs) 은 텍스트 입력 상자에 커서를 놓았을 때, 어떤 브라우저는 테두리에 청색 외곽선을 자동으로 보여줍니다. 이 기능을 없애려면 outline: none; 속성을 인풋 (input) 태그에 지정하면 됩니다. 반면 :focus 가상-클래스를 지정하여 커서를 놓았을 때 배경색이나 테두리 속성을 바꾸어 주어 사용자에게 어디를 작업하고 있는지를 좀더 명확히 알 수 있게 할 수 있습니다. */ 
+
+
+input[type=text]{ 
+    font-family: 'UhBeepuding'; 
+    width: 250px;
+    height: 20px;
+    border-radius: 5px; 
+    background-color: #f2f2f2; 
+    display: block; margin: 0px auto;
+    }
+
+.highligted {
+    background-image: url(../media/image/foodtruck/highlight_2.png);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
 }

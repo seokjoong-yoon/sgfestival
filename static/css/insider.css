@@ -1,3 +1,7 @@
+* {
+    
+    font-family: 'chosun_ilbo_myungjo.ttfRg';   
+}
 body {
     margin : 0 !important;    
     background-color : #cccccc;
@@ -24,10 +28,25 @@ body {
 textarea{
     ime-mode:auto; 
     border:none; 
-    border-bottom:1px solid black;
+    border-bottom:2px solid black;
     background-color : transparent;
+    margin : 5% auto;
+    display: block;
+    font-size:24px;
+    color:black;
 }
 
-h1{
-    font-family: 'chosun_ilbo_myungjo.ttfRg';   
+#main img{
+    width: 70%;
+    margin: 0 auto;
+    display: block;
 }
+
+button{
+    border:3px solid black;
+    background-color : transparent;
+    margin : 5%;
+    float: right;
+    font-size: 24px;
+}
+

@@ -1,4 +1,38 @@
-{% for dpt, num in result.items %}
-    <div><span>{{dpt}}</span> <span>{{num}}명</span></div>
-{%endfor%}
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static '/css/chosun_ilbo_myungjo.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static '/css/insider.css' %}">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    </head>
+    
+    <body>
+        <div id="home">
+            <a href="{% url 'home' %}">
+                <input type="image" id="home-img" src="{% static '/images/insider/home_button3.png' %}">
+            </a>
+        </div>
+        <div id="header">
+            <img id="header-img" src="{% static '/images/insider/hakbu.png' %}"/>
+        </div>
+        <div id="main" style="text-align: center; margin-top:10%;">
+            <table>
+                <tr style="background-color: rgb(253, 242, 208)">
+                    <th>순위</th>
+                    <th>점수</th>
+                    <th>학부</th>
+                </tr>
 
+                {% for dpt, num in result.items %}
+                    <tr>
+                        <th style="background-color: rgb(174, 171, 171)">{{ forloop.counter }}</th>
+                        <td>{{ num }}</td>
+                        <td>{{ dpt }}</td>
+                    </tr>
+                {%endfor%}
+            </table>      
+        </div>
+    </body>
+
+</html>

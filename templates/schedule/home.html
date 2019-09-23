@@ -11,6 +11,14 @@
                     alert("로그인이 필요한 기능입니다.");
                 }
             }
+            function go_if_login(login, link){
+                if(login == 'False'){
+                    alert("로그인이 필요한 기능입니다.");
+                }
+                else{                    
+                    location.href=link;
+                }
+            }
         </script>
     </head>
     
@@ -38,29 +46,15 @@
                 <img id="timetable" src="{% static 'images/home/time_table_button.png' %}" class="absolute">
                 <img id="food" src="{% static 'images/home/food_truck_button.png' %}" class="absolute">
                 <img id="event" src="{% static 'images/home/event_button.png' %}" class="absolute">
-                <a href="{% url 'attend' %}">
-                    <img id="attend" src="{% static 'images/home/check.png' %}" class="absolute" onclick="alert('로그인이 필요한 기능입니다.');">
-                </a>
+                <img id="attend" src="{% static 'images/home/check.png' %}" class="absolute" onclick='go_if_login("{{ user.is_authenticated }}", "{% url 'attend' %}")'>
             </div>
             <div id="desk">
                 <img id="desk-img" src="{% static 'images/home/desk.png' %}" class="absolute">
                 <img id="chair" src="{% static 'images/home/chair.png' %}" class="absolute">
 
-                {% if user.is_authenticated %}
-                <a href="{% url 'game1' %}">
-                    <img id="flat_mp3" src="{% static 'images/home/flat_mp3.png' %}" class="absolute">
-                </a>
-                {% else %}
-                    <img id="flat_mp3" src="{% static 'images/home/flat_mp3.png' %}" class="absolute" onclick="alert('로그인이 필요한 기능입니다.');">
-                {% endif %}
+                <img id="flat_mp3" src="{% static 'images/home/flat_mp3.png' %}" class="absolute" onclick='go_if_login("{{ user.is_authenticated }}", "{% url 'game1' %}")'>
 
-                {% if user.is_authenticated %}
-                <a href="{% url 'inside' %}">
-                    <img id="books" src="{% static 'images/home/books.png' %}" class="absolute">
-                </a>
-                {% else %}
-                    <img id="books" src="{% static 'images/home/books.png' %}" class="absolute" onclick="alert('로그인이 필요한 기능입니다.');">
-                {% endif %}
+                <img id="books" src="{% static 'images/home/books.png' %}" class="absolute" onclick='go_if_login("{{ user.is_authenticated }}", "{% url 'game1' %}")'>
 
                 <img id="melody" src="{% static 'images/home/melody.png' %}" class="absolute">
 

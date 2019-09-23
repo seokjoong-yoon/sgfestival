@@ -37,7 +37,6 @@ $.ajax({
                 {% else %}
                 <h1>20점만에 {{count}}점</h1>
                 {% endif %}
-                {% endif %}
                 <h1 id="rank"></h1>
             </div>
            <img  id="button" src="{% static 'images/song/exit.png' %}" onClick="location.href='{% url "home" %}';">

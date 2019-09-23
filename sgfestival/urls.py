@@ -14,7 +14,6 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-<<<<<<< HEAD
 from django.urls import path
 from accounts import views as userviews
 from game import views as gameviews
@@ -36,13 +35,6 @@ urlpatterns = [
     path('song/songrank/', gameviews.songrank, name="songrank"),
     path('inside/insiderank/', gameviews.insiderank, name="insiderank"),
     path('attend/', attendviews.attend, name='attend'),
-=======
-from django.urls import path, include
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('schedule/', include("schedule.urls")),
->>>>>>> b7ed6096dbf118787f0cd3667c2b7f280112501c
 ]
 
 urlpatterns+=static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

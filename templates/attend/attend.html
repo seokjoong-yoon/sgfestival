@@ -14,6 +14,7 @@
 </script>
 <div id = "background">
     <img id="backgroundimg" src="{% static 'images/attend/background.jpg' %}">
+    <a href="{% url 'home' %}">홈으로</a>
     <div id = "headdiv">
         <img id="headimg" src="{% static 'images/attend/head.png' %}">
     </div>
@@ -27,64 +28,158 @@
             <td class = "today">9월 24일<br>(화)</td>
             {% else %}
             <td class = "weekday">9월 24일<br>(화)</td>
-            {% endif %}
+            {% endif %}    
+            {% if tue == 1 %}
             <td>
-                {% if tue == 1 %}
-                <img id = "checkedimg" src = "{% static 'images/attend/checked.png' %}">
+                <div id ="checkeddiv">
+                    <img id = "checkedimg" src = "{% static 'images/attend/checked.png' %}">
+                </div>
+                </td>
                 {% elif tue == 2 %}
-                <form action="{% url 'attend' %}" method="POST" id = "checkform">
-                    <img id = "todayimg" src ="{% static 'images/attend/today.png' %}" onclick="check();">
-                </form>
-                {% endif %}     
-            </td>
+                <td style = "display: block;">
+                        <form action="{% url 'attend' %}" method="POST" id = "checkform">
+                                <div class="bird-container bird-container--one">
+                                        <div class="bird bird--one"></div>
+                                    </div>
+                                    
+                                    <div class="bird-container bird-container--two">
+                                        <div class="bird bird--two"></div>
+                                    </div>
+                                    
+                                    <div class="bird-container bird-container--three">
+                                        <div class="bird bird--three"></div>
+                                    </div>
+                                    
+                                    <div class="bird-container bird-container--four">
+                                        <div class="bird bird--four"></div>
+                                    </div>
+                                    <div id="todaydiv">
+                                        <img id = "todayimg" src ="{% static 'images/attend/today.png' %}" onclick="check();">
+                                    </div>
+                                </form>
+                            </td>
+                            {% else %}
+                            <td></td>
+                        {% endif %}    
         </tr>
         <tr>
             {% if today == 2 %}
-            <td class = "today">9월 25일<br>(수)</td>
+                <td class = "today">9월 25일<br>(수)</td>
             {% else %}
-            <td class = "weekday">9월 25일<br>(수)</td>
+                <td class = "weekday">9월 25일<br>(수)</td>
             {% endif %}
-            <td>
-                {% if wed == 1 %}
-                <img id = "checkedimg" src = "{% static 'images/attend/checked.png' %}">
-                {% elif wed == 2 %}
-                <form action="{% url 'attend' %}" method="POST" id = "checkform">
-                    <img id = "todayimg" src ="{% static 'images/attend/today.png' %}" onclick="check();">
-                </form>
-                {% endif %}     
-            </td>
+            
+            {% if wed == 1 %}
+            <td>   
+                    <div id ="checkeddiv">
+                        <img id = "checkedimg" src = "{% static 'images/attend/checked.png' %}">
+                    </div>
+                </td>
+            {% elif wed == 2 %}
+            <td style = "display: block;">
+            <form action="{% url 'attend' %}" method="POST" id = "checkform">
+                        <div class="bird-container bird-container--one">
+                                <div class="bird bird--one"></div>
+                            </div>
+                            
+                            <div class="bird-container bird-container--two">
+                                <div class="bird bird--two"></div>
+                            </div>
+                            
+                            <div class="bird-container bird-container--three">
+                                <div class="bird bird--three"></div>
+                            </div>
+                            
+                            <div class="bird-container bird-container--four">
+                                <div class="bird bird--four"></div>
+                            </div>
+                            <div id="todaydiv">
+                                <img id = "todayimg" src ="{% static 'images/attend/today.png' %}" onclick="check();">
+                            </div>
+                        </form>
+                    </td>
+                    {% else %}
+                    <td></td>         
+            {% endif %}
         </tr>
         <tr>
             {% if today == 3 %}
-            <td class = "today">9월 26일<br>(목)</td>
+                <td class = "today">9월 26일<br>(목)</td>
             {% else %}
-            <td class = "weekday">9월 26일<br>(목)</td>
+                <td class = "weekday">9월 26일<br>(목)</td>
             {% endif %}
+            
+            {% if thur == 1 %}
             <td>
-                {% if thur == 1 %}
+            <div id ="checkeddiv">
                 <img id = "checkedimg" src = "{% static 'images/attend/checked.png' %}">
-                {% elif thur == 2 %}
-                <form action="{% url 'attend' %}" method="POST" id = "checkform">
-                    <img id = "todayimg" src ="{% static 'images/attend/today.png' %}" onclick="check();">
-                </form>
-                {% endif %}         
             </td>
-        </tr>
+            {% elif thur == 2 %}
+            <td style = "display: block;">
+                    <form action="{% url 'attend' %}" method="POST" id = "checkform">
+                        <div class="bird-container bird-container--one">
+                            <div class="bird bird--one"></div>
+                        </div>
+                        
+                        <div class="bird-container bird-container--two">
+                            <div class="bird bird--two"></div>
+                        </div>
+                        
+                        <div class="bird-container bird-container--three">
+                            <div class="bird bird--three"></div>
+                        </div>
+                        
+                        <div class="bird-container bird-container--four">
+                            <div class="bird bird--four"></div>
+                        </div>
+                        <div id="todaydiv">
+                            <img id = "todayimg" src ="{% static 'images/attend/today.png' %}" onclick="check();">
+                        </div>
+                    </form>
+                </td>             
+                {% else %}
+                <td></td>
+                {% endif %}        
+            </tr>
         <tr>
             {% if today == 4 %}
             <td class = "today">9월 27일<br>(금)</td>
             {% else %}
             <td class = "weekday">9월 27일<br>(금)</td>
             {% endif %}
+            
+            {% if fri == 1 %}
             <td>
-                {% if fri == 1 %}
+            <div id ="checkeddiv">
                 <img id = "checkedimg" src = "{% static 'images/attend/checked.png' %}">
-                {% elif fri == 2 %}
-                <form action="{% url 'attend' %}" method="POST" id = "checkform">
-                    <img id = "todayimg" src ="{% static 'images/attend/today.png' %}" onclick="check();">
-                </form>
-                {% endif %}         
+            </div>
             </td>
+            {% elif fri == 2 %}
+            <td style = "display: block;">
+            <form action="{% url 'attend' %}" method="POST" id = "checkform">
+                    <div class="bird-container bird-container--one">
+                            <div class="bird bird--one"></div>
+                        </div>
+                        
+                        <div class="bird-container bird-container--two">
+                            <div class="bird bird--two"></div>
+                        </div>
+                        
+                        <div class="bird-container bird-container--three">
+                            <div class="bird bird--three"></div>
+                        </div>
+                        
+                        <div class="bird-container bird-container--four">
+                            <div class="bird bird--four"></div>
+                        </div>
+                        <div id="todaydiv">
+                            <img id = "todayimg" src ="{% static 'images/attend/today.png' %}" onclick="check();">
+                        </div>
+                    </form>
+                </td>     
+            {% else %}
+            <td></td>    
+            {% endif %}
         </tr>
     </table>
     <div id="bannerdiv">

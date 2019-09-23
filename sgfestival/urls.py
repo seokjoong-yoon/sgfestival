@@ -16,12 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 <<<<<<< HEAD
-from django.urls import path
+from django.urls import path, include
 from accounts import views as userviews
 from game import views as gameviews
 from attend import views as attendviews
 from django.conf import settings
 from django.conf.urls.static import static
+import madang.views as mviews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -38,17 +39,8 @@ urlpatterns = [
     path('inside/insiderank/', gameviews.insiderank, name="insiderank"),
     path('attend/', attendviews.attend, name='attend'),
     path('guide/', userviews.guide, name="guide"), 
-]
 
-=======
-from django.urls import path, include
-from django.conf import settings
-from django.conf.urls.static import static  
-import madang.views as mviews
-
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
+    
     path('schedule/', include("schedule.urls")),
     path('madang/', include("madang.urls", namespace="madang")),
     path('madang/<int:pk>/', mviews.madang_detail, name="madang_detail"),
@@ -57,5 +49,4 @@ urlpatterns = [
     path('foodtruck/', include("foodtruck.urls")),
     path('timetable/',mviews.timetable,name="timetable"),
 ]
->>>>>>> teamA
 urlpatterns+=static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

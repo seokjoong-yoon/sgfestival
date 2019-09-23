@@ -1,0 +1,23 @@
+@import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeepuding.woff');
+
+.pagination {
+    display: inline-block;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 3% 3.7%;
+    text-decoration: none;
+
+}
+
+.pagination a.active {
+    background-color: blue;
+    color: white;
+}
+.map{
+    text-align: center;
+    padding-left: 100%;
+}
+

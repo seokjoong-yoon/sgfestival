@@ -10,6 +10,15 @@
     width: 40%;
     position: absolute;
 }
+a{
+    font-size: 50pt;
+    font-family: 'aNewGungSeo';
+    font-weight: bold;
+    color: rgb(38, 38, 38);
+    position: absolute;
+    top : 1%;
+    text-decoration: none;
+}
 #headimg{
     height: 100%;
     width: 100%;
@@ -28,14 +37,14 @@ table tr th{
     border-collapse: collapse;
     font-size: 30pt;
     height:100px;
-    border : 5px solid #000000;
+    border : 3px solid #000000;
 }
 
 table tr td{
     border-collapse: collapse;
-    font-weight: bold;
+    font-weight: 1000;
     height: 200px;
-    border : 5px solid #000000;
+    border : 1px solid #000000;
 }
 .weekday{
     background-color: rgb(227, 227, 227);
@@ -45,21 +54,21 @@ table tr td{
 }
 #backgroundimg{
     width: 100%;
-    height: 130%;
+    height: 110%;
     position: absolute;
 }
 table{
     border-collapse: collapse;
     width: 90%;
     font-size: 40pt;
-    font-family: '궁서';
+    font-family: 'aNewGungSeo';
     color: rgb(38, 38, 38);
     top: 20%;
     left: 5%;
     position: absolute;
     z-index: 1;
     text-align: center;
-    border : 5px solid black;
+    border : 3px solid black;
 }
 #checkedimg{
     height: 100%;
@@ -68,9 +77,9 @@ table{
 }
 
 #todayimg{
+    position: relative;
     height: 100%;
     width: 100%;
-    z-index: 2;
 }
 #bannerdiv{
     top: 80%;
@@ -84,3 +93,171 @@ table{
     width: 100%;
     height: 100%;
 }
+#checkform{
+    margin: auto 0;
+    height: 200px;
+}
+#checkeddiv{
+    width:200px;
+    height:200px;
+    padding: 0 100px;
+    margin:0 auto;
+}
+#todaydiv{
+    position: relative;
+    width:300px;
+    height:200px;
+    z-index: 2;
+    bottom: 70%;
+    left: 20%;
+}
+
+ 
+ tr td .bird {
+     background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/174479/bird-cells.svg);
+     background-size: auto 100%;
+     width: 90px;
+     height: 125px;
+     will-change: background-position;
+     
+     animation-name: fly-cycle;
+     animation-timing-function: steps(10);
+     animation-iteration-count: infinite; 
+ }
+  
+.bird--one {
+    animation-duration: 1s;
+    animation-delay: -0.5s;		
+}
+
+.bird--two {
+    animation-duration: 0.9s;
+    animation-delay: -0.75s;
+}
+
+.bird--three {
+    animation-duration: 1.25s;
+    animation-delay: -0.25s;
+}
+
+.bird--four {
+    animation-duration: 1.1s;
+    animation-delay: -0.5s;
+}
+
+ .bird-container {
+     position: relative;
+     display: inline-block;
+     padding: 0;
+     width: 54px;
+     top: 15%;
+     right: 90%;
+     transform: scale(0) translateX(-10vw);
+     will-change: transform;
+     z-index: 1;
+     animation-name: fly-right-one;
+     animation-timing-function: linear;
+     animation-iteration-count: infinite;
+ }
+     
+ .bird-container--one {
+    animation-duration: 6s;
+    animation-delay: 0.5s;
+}
+
+.bird-container--two {
+    animation-duration: 6s;
+    animation-delay: 1.5s;
+}
+
+.bird-container--three {
+    animation-duration: 6s;
+    animation-delay: 3.5s;
+}
+
+.bird-container--four {
+    animation-duration: 6s;
+    animation-delay: 4.25s;
+}
+
+
+ @keyframes fly-cycle {
+     
+     100% {
+         background-position: -900px 0;
+     }
+     
+ }
+ 
+ @keyframes fly-right-one {
+     
+     0% {
+         transform: scale(0.7) translateX(-10vw);
+     }
+     
+/*     10% {
+         transform: translateY(2vh) translateX(10vw) scale(0.3);
+     }
+     
+     20% {
+         transform: translateY(0vh) translateX(30vw) scale(0.3);
+     }
+     
+     30% {
+         transform: translateY(4vh) translateX(50vw) scale(0.3);
+     }
+     
+     40% {
+         transform: translateY(2vh) translateX(70vw) scale(0.3);
+     }
+ */    
+     25% {
+         transform: translateY(4vh) translateX(10vw) scale(0.6);
+     }
+     
+     75% {
+         transform: translateY(0vh) translateX(60vw) scale(0.5);
+     }
+     
+     100% {
+         transform: translateY(3vh) translateX(70vw) scale(0.6);
+     }
+     
+ }
+ 
+ @keyframes fly-right-two {
+     
+     0% {
+         transform: translateY(-2vh) translateX(-10vw) scale(0.5);
+     }
+     
+     10% {
+         transform: translateY(0vh) translateX(10vw) scale(0.4);
+     }
+     
+     20% {
+         transform: translateY(-4vh) translateX(30vw) scale(0.6);
+     }
+     
+     30% {
+         transform: translateY(1vh) translateX(50vw) scale(0.45);
+     }
+     
+     40% {
+         transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
+     }
+     
+     50% {
+         transform: translateY(0vh) translateX(90vw) scale(0.45);
+     }
+     
+     51% {
+         transform: translateY(0vh) translateX(110vw) scale(0.45);
+     }
+     
+     100% {
+         transform: translateY(0vh) translateX(110vw) scale(0.45);
+     }
+     
+ }
+/*출처: https://ldrerin.tistory.com/397 [코코리의 그래픽 갖고놀기😊]*/

@@ -1,5 +1,6 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/song.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
 <script language="javaScript">
     function Backward(){
         window.history.back();
@@ -26,20 +27,21 @@
                     </th>
                 </tr>
                 {% for dpt, num in result.items %}
-                <tr>
-                        <td class="rank">
-                            {{forloop.counter}}
-                        </td>
-                        <td>
-                            {{num}}명
-                        </td>
-                        <td>
-                            {{dpt}}
-                        </td>
-                    </tr>
-                {% if forloop.counter == 4 %}
-                    {{ break }}
-                {% endif %}
+                    {% if forloop.counter < 6 %}
+                    <tr>
+                            <td class="rank">
+                                {{forloop.counter}}
+                            </td>
+                            <td>
+                                {{num}}명
+                            </td>
+                            <td>
+                                {{dpt}}
+                            </td>
+                        </tr>
+                    {% else %}
+                        <p></p>
+                    {% endif %}
                 {% endfor %}
 
 

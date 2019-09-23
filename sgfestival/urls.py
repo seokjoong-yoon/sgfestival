@@ -35,6 +35,7 @@ urlpatterns = [
     path('song/songrank/', gameviews.songrank, name="songrank"),
     path('inside/insiderank/', gameviews.insiderank, name="insiderank"),
     path('attend/', attendviews.attend, name='attend'),
+    path('guide/', userviews.guide, name="guide"), 
 ]
 
 urlpatterns+=static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

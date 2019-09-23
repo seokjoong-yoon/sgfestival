@@ -1,4 +1,3 @@
-
 {% load static %}
 
 <!DOCTYPE html>
@@ -23,7 +22,7 @@
                 height: 100%;
                 border: 0;
                 padding: 0; 
-                background-image: url('{% static "images/a..png" %}');
+                background-image: url("../../static/media/image/lineup/a..png");
                 min-height: 100%;
                 min-width:100%;
                 background-position: center;
@@ -35,11 +34,12 @@
                 
             }
             
-        input.img-button{background: url('{% static "images/thu.png" %}');
+        input.img-button{
+            background: url("../../static/media/image/lineup/thur_yes.png");
         background-repeat:  no-repeat; 
         border: none; cursor: pointer; position: absolute;  width: 90%; height:80%;  left:250px; top:125px;}
 
-        input.img-button2{background: url('{% static "images/fri.png" %}');
+        input.img-button2{background: url("../../static/media/image/lineup/fri_no.png");
         background-repeat:  no-repeat; 
         border: none; cursor: pointer; position: absolute;  width: 80%; height:80%; left:310px; top:180px;}
 
@@ -51,16 +51,16 @@
       
                 <div id="total">
                     <div id="top">
-                        <a href="#"><img src="{% static "images/home_button.png" %}" style="padding-top: 5%; padding-left: 5%; width: 25%;"/></a>
+                        <a href="/"><img src="../../static/media/image/lineup/home_button.png" style="padding-top: 5%; padding-left: 5%; width: 25%;"/></a>
                     </div>
       
 
                       <!-- <img src="{% static "images/lineup1.png" %}" style= "position: absolute; padding-left:6%; padding-top:45%; width:100%;" > -->
                       
-                      <!-- <div class="thurs">
+                      <!--<div class="thurs">
                             <input type="button" value = "목" onclick="thurs()">
-                            <img src="{% static "images/thur_yes.png" %} id = "thursday" style="display:block; position: absolute;"  alt="목">
-                        </div>-->
+                            <img src="../../static/media/image/lineup/thur_yes.png" id = "thursday" style="display:block; position: absolute;"  alt="목">
+                        </div>
                            <!-- <img src="{% static "images/thur_yes.png" %}" style="position:absolute; padding-top:30%; width:90%;"/>
                            
                        </div>
@@ -77,8 +77,8 @@
                         <input type="button" class="img-button2 btn-sm" value = "" onclick="fri()">
                     </div>
 
-                    <img  src="{% static "images/lineup1.png" %}" id = "thursday" style="display:block;,position: absolute;  padding-top:35%; width:105%; " alt="목"">
-                    <img src="{% static "images/lineup2.png" %}" id = "friday" style="display:none position: absolute;  padding-top:35%; width:105%;" alt="금"> 
+                    <img  src="../../static/media/image/lineup/lineup1.png" id = "thursday" style="display:block;,position: absolute;  padding-top:35%; width:105%; " alt="목"">
+                    <img src="../../static/media/image/lineup/lineup2.png" id = "friday" style="display:none position: absolute;  padding-top:35%; width:105%;" alt="금"> 
 
     </body>
     <script>

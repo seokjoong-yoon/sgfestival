@@ -1,0 +1,37 @@
+{% extends '../base2.html' %} 
+
+<head>
+</head>
+    {% block content %}
+
+<div class="title"><p>서강고 주간 식단표</h1></p></div>
+<img src="../../static/media/image/foodtruck/magnet.png" class="logo">
+
+<div class="container-fluid" style="position: relative; z-index: 1;" >
+<br><br><br>
+<p style="font-size: 30px; text-align:center; font-weight: bold;"> - 급식 만족도 조사 - </p>
+<p class="rating">
+<ul class="points">
+    <form method="post" enctype='multipart/form-data'>
+            {% csrf_token %}
+        <p><label for="id_ftRating"> > 평점 선택 : </label> <select name="ftRating" id="id_ftRating"> </p>
+        <option value="5" selected="">5점</option>
+    
+        <option value="4">4점</option>
+    
+        <option value="3">3점</option>
+    
+        <option value="2">2점</option>
+    
+        <option value="1">1점</option>
+    
+    </select>
+    <p><label for="id_ftCommentImage">> 이미지 업로드</label><br> <input type="file" name="ftCommentImage" accept="image/*" id="id_ftCommentImage" style="display: block; margin: 0px auto;"></p>
+    <p><label for="id_ftComment">> 한마디 평가 : </label> <br><input type="text" name="ftComment" maxlength="300" class="form-control" id="id_ftComment"></p>
+    <p><label for="id_ftCommentAuthor">> 글쓴이 : </label> <br><input type="text" name="ftCommentAuthor" value="" maxlength="100" class="form-control" required="" id="id_ftCommentAuthor"></p>
+    <input type="submit" ,="" value="제출" style="font-family: 'UhBeepuding'" class="upload">
+</ul>
+
+</div>
+
+{% endblock %}

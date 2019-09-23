@@ -16,8 +16,11 @@ def game1(request):
                 rankD[user.songscore].append(user)
             else:
                 rankD[user.songscore]=[user]
-        rank=list(rankD.keys()).index(request.user.songscore)        
-        return render(request, 'game/songresult.html', {"rank":rank+1, "total":total})
+        rank=list(rankD.keys()).index(request.user.songscore)
+        myuser=Myuser.objects.get(username=request.user)
+        count=myuser.songscore
+        
+        return render(request, 'game/songresult.html', {"rank":rank+1, "total":total, 'count':count})
     if request.method=="POST":
         count=0
         real_ans = ['위아래', '빠빠빠', '비밀번호486', '내귀에캔디', '거북선',
@@ -47,7 +50,9 @@ def game1(request):
             myuser.save()
             return render(request, 'game/songresult.html')
     else:
-        return render(request, 'game/song.html')
+        myuser=Myuser.objects.get(username=request.user)
+        count=myuser.songscore
+        return render(request, 'game/song.html', {'count':count})
 
 def songrank(request):
     if request.method == "GET":
@@ -74,8 +79,10 @@ def inside(request):
             else:
                 rankD[user.insidescore]=[user]
         rank=list(rankD.keys()).index(request.user.insidescore)
+        myuser=Myuser.objects.get(username=request.user)
+        count=myuser.songscore
 
-        return render(request, 'game/insideresult.html', {"rank":rank+1,"total":total})
+        return render(request, 'game/insideresult.html', {"rank":rank+1,"total":total, 'count':count})
     if request.method=="POST":
         count=0
         real_ans = ['응답하라1994', '별에서온그대', '꽃보다남자', '차카니', '멜짱', '쿠우', '텐텐', '미니벨', '아폴로', 'gee', '으르렁', '루시퍼', 'nonono', '내꺼하자', 'sohot', '던킨도너츠', '쇼', '석류', '신한', '뿌셔', '빠름', '빙수']

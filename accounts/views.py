@@ -5,6 +5,8 @@ from django.contrib import auth
 # Create your views here.
 def home(request):
     return render(request, 'schedule/home.html')
+def guide(request):
+    return render(request, 'schedule/guide.html')
     
 def register(request):
     if request.method == "POST":

@@ -32,6 +32,13 @@ select option{
     margin: 10px;
 }
 
+.register .font-on-board{
+    font-family: UhBeepuding, serif;
+    font-size: 24px;
+    color: white;
+    margin: 5px;
+}
+
 button {
     float : right;
     border: 0;
@@ -44,3 +51,6 @@ button {
     margin : 10px;
 }
 
+form{
+    margin-bottom:0;
+}

@@ -17,6 +17,10 @@
 
             <div id="board">
                 <img id="board-img" src="{% static 'images/home/board.png' %}">
+                <a href="{% url 'home' %}">
+                    <img id="home-button" src="{% static 'images/home/home_button.png' %}">
+                </a>
+
                 <div class="register board-contents absolute">
                     <form action="{% url 'register' %}" method="POST">
                         {% csrf_token %}
@@ -43,8 +47,7 @@
                             {{context}}
                         {% endif %}   
                         <br>
-                        <button type="submit">가입하기</button>
-                        <button type="button" onClick="location.href='{% url 'home' %}'">홈으로 가기</button>       
+                        <button type="submit" style="margin: 0">가입하기</button>    
                     </form>
                 </div>                
             </div>

@@ -72,14 +72,20 @@ body {
 
 #food{
     height: 25%;
-    left: 20%;
+    left: 15%;
     top: 55%;
 }
 
 #event{
     height: 40%;
-    left: 55%;
-    top: 50%;
+    left: 58%;
+    top: 45%;
+}
+
+#attend{
+    height: 25%;
+    left: 36%;
+    top: 70%;
 }
 
 #desk-img{
@@ -147,10 +153,28 @@ body {
     right: 20%;
 }
 
+
+#home-button{
+    position: absolute;
+    height: 11%;
+    z-index: 100;
+    top : 8%;
+    left: 3%;
+}
+
 .board-contents{
     position: absolute;
     z-index: 10;
     top :50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width : 80%;
+}
+
+.register .board-contents{
+    position: absolute;
+    z-index: 10;
+    top : 54%;
     left: 50%;
     transform: translate(-50%, -50%);
     width : 80%;

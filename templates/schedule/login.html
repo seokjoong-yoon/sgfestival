@@ -17,6 +17,10 @@
 
             <div id="board">
                 <img id="board-img" src="{% static 'images/home/board.png' %}">
+                <a href="{% url 'home' %}">
+                    <img id="home-button" src="{% static 'images/home/home_button.png' %}">
+                </a>
+
                 <div class="board-contents absolute">
                     <form method = "POST" action="{% url 'login' %}">{% csrf_token %}
                         <div class="font-on-board">학번 　<input id="username" name="username" placeholder='' type="text" required></div>       

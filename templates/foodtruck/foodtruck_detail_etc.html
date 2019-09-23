@@ -1,59 +1,89 @@
-<h1>FOODTRUCK DETAIL ETC</h1>
+{% extends '../base2.html' %} 
 
 
-<!--이중 for loop-->
+    {% block content %}
+<div class="title"><p>서강고 주간 식단표</h1></p></div>
+<img src="../../static/media/image/foodtruck/magnet.png" class="logo" style="">
+
+<div class="container-fluid" style="position: relative; z-index: 1;" >
+    <br><br>
+    <!--이중 for loop-->
 {% for cate in categorized %}
-    <br>
-    푸드트럭 이름: {{ cate.ftName }}
-    {{cate.generalRating}}
+    <div class="foodtruck">
+<br>
+
+    <div class="foodtruck_dt">
+    <div class="foodtruck_name"><br><br>
+            <p style="font-size: 120%"><img src="../../static/media/image/foodtruck/moon.png" class="pin" style="height: 20px">
+                {{ cate.ftName }}<br></p></div>
+    <p></p>
+
     {% if cate.ftImage %} 
-        <img src = "{{ cate.ftImage.url }}" width = 300><br>  <!--푸드트럭 이미지-->
+        <div class="foodtruck_img">
+        <img src = "{{ cate.ftImage.url }}" width = 200px class="foodpics"><br> </div> <!--푸드트럭 이미지-->
     {% endif %}
     <!--여기부터 if cate.ftMenu10 까지는 푸드트럭 메뉴-->
-    <p>메뉴:</p>
+    <div class="foodmenus">
+
+
     {% if cate.ftMenu1 %}
-        <p>{{ cate.ftMenu1 }}</p>
+    <p>▶ {{ cate.ftMenu1 }}</p>
     {% endif %}
     {% if cate.ftMenu2 %}
-        <p>{{ cate.ftMenu2 }}</p>
+    <p>▶ {{ cate.ftMenu2 }}</p>
     {% endif %}
     {% if cate.ftMenu3 %}
-        <p>{{ cate.ftMenu3 }}</p>
+    <p>▶ {{ cate.ftMenu3 }}</p>
     {% endif %}
     {% if cate.ftMenu4 %}
-        <p>{{ cate.ftMenu4 }}</p>
+    <p>▶ {{ cate.ftMenu4 }}</p>
     {% endif %}
     {% if cate.ftMenu5 %}
-        <p>{{ cate.ftMenu5 }}</p>
+    <p>▶ {{ cate.ftMenu5 }}</p>
     {% endif %}
     {% if cate.ftMenu6 %}
-        <p>{{ cate.ftMenu6 }}</p>
+    <p>▶ {{ cate.ftMenu6 }}</p>
     {% endif %}
     {% if cate.ftMenu7 %}
-        <p>{{ cate.ftMenu7 }}</p>
+    <p>{{ cate.ftMenu7 }}</p>
     {% endif %}
     {% if cate.ftMenu8 %}
-        <p>{{ cate.ftMenu8 }}</p>
+    <p>{{ cate.ftMenu8 }}</p>
     {% endif %}
     {% if cate.ftMenu9 %}
-        <p>{{ cate.ftMenu9 }}</p>
+    <lip>{{ cate.ftMenu9 }}</p>
     {% endif %}
     {% if cate.ftMenu10 %}
-        <p>{{ cate.ftMenu10 }}</p>
+    <p>{{ cate.ftMenu10 }}</p>
+        </ul>
     {% endif %}
+    </div>
+    </div>
 
-    <a href="{% url 'foodtruck:foodtruck_review_etc' index=cate.pk %}">후기 남기기</a>
-    <br><br>
+
+    <div class="foodreview">
+        <p style="text-align: center"> <{{ cate.ftName }}> 트럭 한마디 후기 <br>
+        평균 평점 : {{cate.generalRating|floatformat:2}}</p>
+    <p style="text-align: right">
+    <a href="{% url 'foodtruck:foodtruck_review_etc' index=cate.pk %}">후기 남기기</a></p></div><br>
+
+    <div class="reviews">
     {% for comment in comments %}
-        {% if comment.foodtruck == cate %}
-        {{ comment.ftRating}} <br>   <!--점수-->
-        {{ comment.ftComment }} <br>  <!--댓글내용-->
-        {{ comment.ftCommentAuthor }} <br> <!--작성자-->
-        {{ comment.ftCommentTimeStamp }} <br> <!--작성시간-->
-        {% if comment.ftCommentImage %} 
-            <img src = "{{ comment.ftCommentImage.url }}" width = 300><br>  <!--사용자가 올린 음식 이미지-->
-        {% endif %}
-        <br><br>
-        {% endif %}
-    {% endfor %}
-{% endfor %}
+            {% if comment.foodtruck == cate %}
+            <div class="review" >
+                <p style="font-size: 90%" class="review_content">>>><span style="font-size:120%"> {{comment.ftRating}}점 <<<</span><br>   <!--점수-->
+                {{ comment.ftComment }}<br>
+                <span style="font-size:80%">{{ comment.ftCommentTimeStamp }} <br>
+                -{{ comment.ftCommentAuthor }}- </p> </span><!--작성시간-->
+            {% if comment.ftCommentImage %}
+                <img src = "{{ comment.ftCommentImage.url }}" width = 300 class="review_pic" >  <!--사용자가 올린 음식 이미지-->
+            {% endif %}
+            </div>
+            {% endif %} 
+    {% endfor %} </p></div>
+{% endfor %}  </div>
+<hr=>
+
+    
+
+{% endblock %}

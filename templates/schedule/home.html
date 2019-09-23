@@ -6,11 +6,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <script language = "javaScript">
-            function WarnToLogIn(x){
-                if(x == 'False'){
-                    alert("로그인이 필요한 기능입니다.");
-                }
-            }
             function go_if_login(login, link){
                 if(login == 'False'){
                     alert("로그인이 필요한 기능입니다.");
@@ -26,6 +21,9 @@
         <div id="wall">
             <div id="motto">
                 <img id="motto-img" src="{% static 'images/home/sogang.png' %}">
+                <a href="{% url 'guide' %}">
+                    <img id="guide_button" src="{% static '/images/home/guide_button.png' %}">
+                </a>
                 {% if user.is_authenticated %}
                     <a href="{% url 'logout' %}">
                         <img id="logout" src="{% static 'images/home/logout.png' %}">

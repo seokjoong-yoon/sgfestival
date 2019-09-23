@@ -153,6 +153,13 @@ body {
     right: 20%;
 }
 
+#guide_button{
+    position: absolute;
+    height: 30%;
+    z-index: 10;
+    top : 70%;
+    left: 1%;
+}
 
 #home-button{
     position: absolute;

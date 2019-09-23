@@ -4,8 +4,8 @@
 
 @font-face {
     font-family: 'chosun_ilbo_myungjo.ttfRg';
-    src: url("/static/font/chosun_ilbo_myungjo.woff2/") format('woff2'),
-         url("/static/font/chosun_ilbo_myungjo.woff/") format('woff');
+    src: url("../font/chosun_ilbo_myungjo.woff2/") format('woff2'),
+         url("../font/chosun_ilbo_myungjo.woff/") format('woff');
     font-weight: normal;
     font-style: normal;
 

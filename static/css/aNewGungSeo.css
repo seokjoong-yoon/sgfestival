@@ -2,12 +2,12 @@
 
 @font-face{
     font-family: aNewGungSeo;
-    src: url("/static/font/a뉴궁서M.ttf") format("truetype");
+    src: url("../font/a뉴궁서M.ttf") format("truetype");
     font-weight: normal;
 }
 
 @font-face{
     font-family: aNewGungSeo;
-    src: url("/static/font/a뉴궁서B.ttf") format("truetype");
+    src: url("../font/a뉴궁서B.ttf") format("truetype");
     font-weight: bold;
 }

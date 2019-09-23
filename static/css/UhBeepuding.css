@@ -1,12 +1,12 @@
 /* 어비폰트 - 웹폰트 설정영역 */
 @font-face {
     font-family: UhBeepuding;
-    src: url("/static/font/UhBeepuding.eot");
+    src: url('../font/UhBeepuding.eot');
 }
 
 @font-face {
     font-family: UhBeepuding;
-    src: url("/static/font/UhBeepuding.woff/") format('woff');
+    src: url('../font/UhBeepuding.woff') format('woff');
 }
 
 article {

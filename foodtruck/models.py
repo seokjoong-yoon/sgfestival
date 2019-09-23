@@ -40,7 +40,7 @@ class FoodtruckComment(models.Model):
     ftCommentImage = models.ImageField(upload_to='images/', blank=True)
     ftComment = models.CharField(max_length=300, blank=True)
     ftCommentAuthor = models.CharField(max_length=100, default='Anonymous')
-    ftCommentTimeStamp = models.DateTimeField(default = timezone.now())
+    ftCommentTimeStamp = models.DateTimeField(default=timezone.now)
 
     class Meta:
         ordering = ('-ftCommentTimeStamp',)

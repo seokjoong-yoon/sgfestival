@@ -38,12 +38,12 @@ urlpatterns = [
     path('inside/insiderank/', gameviews.insiderank, name="insiderank"),
     path('attend/', attendviews.attend, name='attend'),
     path('guide/', userviews.guide, name="guide"),
-    path('schedule/', include("schedule.urls")),
+    path('schedule/', include("schedule.urls", namespace="schedule")),
     path('madang/', include("madang.urls", namespace="madang")),
     path('madang/<int:pk>/', mviews.madang_detail, name="madang_detail"),
     path('lineup', mviews.lineup, name="lineup"),
     path('performtime', mviews.performtime, name="performtime"),
-    path('foodtruck/', include("foodtruck.urls")),
+    path('foodtruck/', include("foodtruck.urls", namespace="foodtruck")),
     path('timetable/',mviews.timetable,name="timetable"),
 ]
 urlpatterns+=static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

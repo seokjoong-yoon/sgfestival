@@ -43,12 +43,11 @@ def game1(request):
                         ans = ans + tmp[j]
             if ans == real_ans[i]:
                 count = count+1
-        with transaction.atomic():
-            myuser=Myuser.objects.get(username=request.user)
-            myuser.songscore = count
-            myuser.song_done = True
-            myuser.save()
-            return render(request, 'game/songresult.html')
+        myuser=Myuser.objects.get(username=request.user)
+        myuser.songscore = count
+        myuser.song_done = True
+        myuser.save()
+        return render(request, 'game/songresult.html', {'count':count})
     else:
         myuser=Myuser.objects.get(username=request.user)
         count=myuser.songscore
@@ -80,7 +79,7 @@ def inside(request):
                 rankD[user.insidescore]=[user]
         rank=list(rankD.keys()).index(request.user.insidescore)
         myuser=Myuser.objects.get(username=request.user)
-        count=myuser.songscore
+        count=myuser.insidescore
 
         return render(request, 'game/insideresult.html', {"rank":rank+1,"total":total, 'count':count})
     if request.method=="POST":

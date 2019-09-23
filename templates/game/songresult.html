@@ -35,7 +35,7 @@ $.ajax({
                 {% if user.songscore == 20 or count == 20%}
                 <h1>만점</h1><br>
                 {% else %}
-                <h1>20점만에 {{user.songscore}}점</h1>
+                <h1>20점만에 {{count}}점</h1>
                 {% endif %}
                 <h1 id="rank"></h1>
             </div>

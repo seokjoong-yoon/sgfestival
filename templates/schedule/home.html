@@ -40,10 +40,10 @@
 
             <div id="board">
                 <img id="board-img" src="{% static 'images/home/board.png' %}">
-                <img id="flea" src="{% static 'images/home/flea_button.png' %}" class="absolute">
-                <img id="timetable" src="{% static 'images/home/time_table_button.png' %}" class="absolute">
-                <img id="food" src="{% static 'images/home/food_truck_button.png' %}" class="absolute">
-                <img id="event" src="{% static 'images/home/event_button.png' %}" class="absolute">
+                <img id="flea" src="{% static 'images/home/flea_button.png' %}" class="absolute"  onclick='go_if_login("{{ user.is_authenticated }}", "{% url 'madang:madang' %}")'>
+                <img id="timetable" src="{% static 'images/home/time_table_button.png' %}" class="absolute" onclick='go_if_login("{{ user.is_authenticated }}", "{% url 'timetable' %}")'>
+                <img id="food" src="{% static 'images/home/food_truck_button.png' %}" class="absolute" onclick='go_if_login("{{ user.is_authenticated }}", "{% url 'foodtruck:foodtruck' %}")'>
+                <img id="event" src="{% static 'images/home/event_button.png' %}" class="absolute"  onclick='go_if_login("{{ user.is_authenticated }}", "{% url 'schedule:schedule' %}")'>
                 <img id="attend" src="{% static 'images/home/check.png' %}" class="absolute" onclick='go_if_login("{{ user.is_authenticated }}", "{% url 'attend' %}")'>
             </div>
             <div id="desk">
